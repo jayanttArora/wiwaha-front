@@ -58,8 +58,8 @@ export default function Navbar() {
               href={item.href}
               className={`nav-item font-dm-sans text-base leading-none tracking-normal transition-colors duration-200 ${
                 isScrolled
-                  ? "text-[#D6A663] font-normal hover:text-[#4C5637]"
-                  : "text-[#D9D9D9] font-normal hover:text-white"
+                  ? "text-[#D6A663] hover:text-[#4C5637]"
+                  : "text-[#D9D9D9] hover:text-white"
               }`}
               data-text={item.name}
             >

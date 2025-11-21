@@ -104,22 +104,10 @@
 
 .nav-item {
   position: relative;
-}
-
-.nav-item::before {
-  content: attr(data-text);
-  font-weight: 600;
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
-  user-select: none;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  font-weight: 400 !important;
+  transition: text-shadow 0.2s ease !important;
 }
 
 .nav-item:hover {
-  font-weight: 600;
+  text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor !important;
 }
