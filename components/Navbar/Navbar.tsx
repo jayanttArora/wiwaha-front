@@ -1,0 +1,87 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if scrolled past Hero section (assuming Hero is full viewport height)
+      setIsScrolled(window.scrollY > window.innerHeight * 0.8);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Amenities', href: '/amenities' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Events', href: '/events' },
+  ];
+
+  return (
+    <nav 
+      className={`fixed top-0 w-full z-50 h-[90px] transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-[#f3eeea]' 
+          : 'bg-[#010101]/60'
+      }`}
+    >
+      <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
+        {/* Logo Text - Left */}
+        <div className="flex-shrink-0">
+          <h1 className="text-[#D6A663] text-2xl font-bold font-prata">
+            WIWAHA
+          </h1>
+        </div>
+
+        {/* Navigation Links - Center */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className={`font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-[#D6A663] hover:text-[#4C5637]'
+                  : 'text-[#d9d9d9] hover:text-[#fff]'
+              }`}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+
+        {/* Contact Us Button - Right */}
+        <div className="flex-shrink-0">
+          <button
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+              isScrolled
+                ? 'bg-[#D6A663] text-white hover:bg-[#4C5637]'
+                : 'bg-white bg-opacity-20 text-[#d9d9d9] hover:bg-opacity-30 hover:text-white'
+            }`}
+          >
+            Contact Us
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            className={`p-2 ${
+              isScrolled ? 'text-[#D6A663]' : 'text-[#d9d9d9]'
+            }`}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
+}
