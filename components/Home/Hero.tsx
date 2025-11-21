@@ -14,7 +14,7 @@ export default function Hero({
   return (
     <section
       className={`min-h-screen bg-about-bg bg-cover bg-center bg-no-repeat ${className}`}
-      style={{ backgroundImage: "url(/images/home/hero-img.png)" }}
+      style={{ backgroundImage: "url(/images/home/hero/hero-img.png)" }}
     >
       <div
         className="text-center pb-16"
@@ -34,7 +34,7 @@ export default function Hero({
         </div>
         <div className="flex justify-center mt-[40px]">
           <img
-            src="/images/home/discover-hero.png"
+            src="/images/home/hero/discover-hero.png"
             alt="Discover Hero"
             className="h-[140px] object-contain"
           />
