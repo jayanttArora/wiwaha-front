@@ -70,14 +70,17 @@ export default function Navbar() {
 
         {/* Contact Us Button - Right */}
         <div className="shrink-0">
-          <button
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-              isScrolled
-                ? "bg-[#D6A663] text-white hover:bg-[#4C5637]"
-                : "bg-white bg-opacity-20 text-[#d9d9d9] hover:bg-opacity-30 hover:text-white"
-            }`}
-          >
-            Contact Us
+          <button className="w-[160px] h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer">
+            <Image
+              src="/icons/contact-us.svg"
+              alt="Contact Us"
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
+            <span className="font-dm-sans font-semibold text-base leading-none tracking-normal text-white">
+              Contact Us
+            </span>
           </button>
         </div>
 
