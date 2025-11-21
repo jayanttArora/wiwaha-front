@@ -1,14 +1,7 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --color-about-bg: #f3eeea;
   --color-about-heading: #4c5637;
   --font-sans: var(--font-geist-sans);
@@ -16,15 +9,66 @@
   --font-prata: var(--font-prata);
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --navbar-height: 90px;
+}
+
+/********************************************/
+/* MEDIA QUERIES */
+/********************************************/
+
+/********************************************/
+/* Maximum Widths */
+/********************************************/
+
+/********************************************/
+/* BELOW 1550px [Bigger Desktops] */
+/********************************************/
+
+@media (max-width: 1550px) {
+}
+
+/********************************************/
+/* BELOW 1280px [Smaller Desktops] */
+/********************************************/
+
+@media (max-width: 1280px) {
+}
+
+/********************************************/
+/* BELOW 1080px [Landscape Tablets] */
+/********************************************/
+
+@media (max-width: 1080px) {
+}
+
+/********************************************/
+/* BELOW 850px [Portrait Tablets] */
+/********************************************/
+
+@media (max-width: 850px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --navbar-height: 70px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/********************************************/
+/* BELOW 650px [Landscape Phones] */
+/********************************************/
+
+@media (max-width: 650px) {
+}
+
+/********************************************/
+/* BELOW 480px [Portrait Phones] */
+/********************************************/
+
+@media (max-width: 480px) {
+}
+
+/********************************************/
+/* BELOW 380px [Small Portrait Phones] */
+/********************************************/
+
+@media (max-width: 380px) {
 }
