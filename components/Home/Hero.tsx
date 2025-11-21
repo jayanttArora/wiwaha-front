@@ -32,6 +32,13 @@ export default function Hero({
           </div>
           <div className="absolute top-[25px] right-[calc(50%+430px/2+20px)] w-[240px] h-[2px] bg-[#D6A663] -translate-y-1/2"></div>
         </div>
+        <div className="flex justify-center mt-[40px]">
+          <img
+            src="/images/home/discover-hero.png"
+            alt="Discover Hero"
+            className="h-[140px] object-contain"
+          />
+        </div>
       </div>
     </section>
   );
