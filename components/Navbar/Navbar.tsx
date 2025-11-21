@@ -1,20 +1,34 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if scrolled past Hero section (assuming Hero is full viewport height)
-      setIsScrolled(window.scrollY > window.innerHeight * 0.8);
+      // Only check scroll on home page
+      if (isHomePage) {
+        // Check if scrolled past Hero section (assuming Hero is full viewport height)
+        setIsScrolled(window.scrollY > window.innerHeight * 0.8);
+      }
     };
+
+    // For non-home pages, always show solid navbar
+    if (!isHomePage) {
+      setIsScrolled(true);
+    } else {
+      // For home page, check initial scroll position
+      handleScroll();
+    }
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const navItems = [
     { name: "Home", href: "/" },
