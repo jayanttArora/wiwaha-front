@@ -23,11 +23,14 @@ export default function Hero({
         <h1 className="font-prata font-normal text-[64px] leading-[75px] tracking-[0%] text-[#FFF]">
           WIWAHA BY PRAMAN
         </h1>
-        <div className="max-w-[430px] mx-auto mt-[40px] whitespace-normal">
-          <p className="font-roboto font-normal text-[20px] leading-[36px] tracking-[0%] text-[#FFFFFF] text-left">
-            Experience Balinese-themed luxury wedding venue, bespoke decor, and
-            premium tailored services for weddings & exclusive events
-          </p>
+        <div className="relative mt-[40px]">
+          <div className="max-w-[430px] mx-auto whitespace-normal">
+            <p className="font-roboto font-normal text-[20px] leading-[36px] tracking-[0%] text-[#FFFFFF] text-left">
+              Experience Balinese-themed luxury wedding venue, bespoke decor,
+              and premium tailored services for weddings & exclusive events
+            </p>
+          </div>
+          <div className="absolute top-[25px] right-[calc(50%+430px/2+20px)] w-[240px] h-[2px] bg-[#D6A663] -translate-y-1/2"></div>
         </div>
       </div>
     </section>
