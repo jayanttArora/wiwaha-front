@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 :root {
   --background: #ffffff;
@@ -9,7 +10,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-about-bg: #f3eeea;
-  --color-about-heading: #4C5637;
+  --color-about-heading: #4c5637;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-prata: var(--font-prata);
