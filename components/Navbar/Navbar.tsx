@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,11 +32,22 @@ export default function Navbar() {
       style={{ height: "var(--navbar-height)" }}
     >
       <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
-        {/* Logo Text - Left */}
+        {/* Logo - Left */}
         <div className="shrink-0">
-          <h1 className="text-[#D6A663] text-2xl font-bold font-prata">
-            WIWAHA
-          </h1>
+          <a href="/" className="cursor-pointer">
+            <Image
+              src={
+                isScrolled
+                  ? "/logos/wiwaha/green-logo.png"
+                  : "/logos/wiwaha/white-logo.png"
+              }
+              alt="WIWAHA Logo"
+              width={150}
+              height={100}
+              className="h-[80px] w-auto"
+              priority
+            />
+          </a>
         </div>
 
         {/* Navigation Links - Center */}
