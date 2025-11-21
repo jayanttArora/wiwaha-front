@@ -14,6 +14,15 @@
   --navbar-height: 90px;
 }
 
+/* Custom text selection color */
+::selection {
+  background-color: #f3eeea;
+}
+
+::-moz-selection {
+  background-color: #f3eeea;
+}
+
 /********************************************/
 /* MEDIA QUERIES */
 /********************************************/

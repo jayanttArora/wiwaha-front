@@ -17,7 +17,7 @@ export default function Hero({
       style={{ backgroundImage: "url(/images/home/hero-img.png)" }}
     >
       <div
-        className="text-center"
+        className="text-center pb-16"
         style={{ paddingTop: "calc(var(--navbar-height) + 100px)" }}
       >
         <h1 className="font-prata font-normal text-[64px] leading-[75px] tracking-[0%] text-[#FFF]">
