@@ -7,6 +7,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-prata: var(--font-prata);
+  --font-dm-sans: var(--font-dm-sans);
 }
 
 :root {
@@ -71,4 +72,30 @@
 /********************************************/
 
 @media (max-width: 380px) {
+}
+
+/********************************************/
+/* NAVBAR STYLES */
+/********************************************/
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::before {
+  content: attr(data-text);
+  font-weight: 600;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-item:hover {
+  font-weight: 600;
 }

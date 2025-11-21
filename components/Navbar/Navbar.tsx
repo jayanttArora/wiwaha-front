@@ -56,11 +56,12 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className={`font-medium transition-colors duration-200 ${
+              className={`nav-item font-dm-sans text-base leading-none tracking-normal transition-colors duration-200 ${
                 isScrolled
-                  ? "text-[#D6A663] hover:text-[#4C5637]"
-                  : "text-[#d9d9d9] hover:text-white"
+                  ? "text-[#D6A663] font-normal hover:text-[#4C5637]"
+                  : "text-[#D9D9D9] font-normal hover:text-white"
               }`}
+              data-text={item.name}
             >
               {item.name}
             </a>
