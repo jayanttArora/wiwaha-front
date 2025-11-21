@@ -23,6 +23,21 @@
   background-color: #f3eeea;
 }
 
+/* Change text color for white text when selected */
+.text-white::selection,
+.text-\[\#FFF\]::selection,
+.text-\[\#FFFFFF\]::selection {
+  color: #4c5637;
+  background-color: #f3eeea;
+}
+
+.text-white::-moz-selection,
+.text-\[\#FFF\]::-moz-selection,
+.text-\[\#FFFFFF\]::-moz-selection {
+  color: #4c5637;
+  background-color: #f3eeea;
+}
+
 /********************************************/
 /* MEDIA QUERIES */
 /********************************************/
