@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Red box overlapping on the right */}
-            <div className="w-[410px] h-[600px] border border-red-500 relative -ml-[100px] -mt-[60px] z-20">
+            <div className="w-[380px] h-[560px] bg-about-bg border border-red-500 rounded-[999px] relative -ml-[100px] -mt-[90px] z-20">
               {/* Red box content can be added here */}
             </div>
           </div>
