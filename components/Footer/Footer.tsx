@@ -3,17 +3,36 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Email submitted:", email);
   };
 
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      const heroSection = document.getElementById("hero");
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      // Navigate to homepage if not already there
+      window.location.href = "/";
+    }
+  };
+
   return (
-    <footer style={{ backgroundColor: "#666F52" }} className="py-12">
+    <footer
+      id="footer"
+      style={{ backgroundColor: "#666F52" }}
+      className="py-12"
+    >
       {/* Main Content - 3 Columns */}
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] mb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 1440:gap-12 1080:gap-8">
@@ -69,7 +88,7 @@ const Footer = () => {
           {/* Second Column - Logo & Social Icons */}
           <div className="flex flex-col gap-6 items-center">
             {/* Logo */}
-            <div>
+            <div onClick={handleLogoClick} className="cursor-pointer">
               <Image
                 src="/logos/wiwaha/white-logo.png"
                 alt="WIWAHA Logo"

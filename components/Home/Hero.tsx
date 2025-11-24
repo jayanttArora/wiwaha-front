@@ -13,6 +13,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
+      id="hero"
       className={`min-h-screen bg-about-bg bg-cover bg-center bg-no-repeat ${className}`}
       style={{ backgroundImage: "url(/images/home/hero/hero-img.png)" }}
     >

@@ -38,6 +38,28 @@ export default function Navbar() {
     { name: "Events", href: "/events" },
   ];
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isHomePage) {
+      e.preventDefault();
+      const heroSection = document.getElementById("hero");
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
+  const handleContactClick = () => {
+    if (isHomePage) {
+      const ctaSection = document.getElementById("cta");
+      if (ctaSection) {
+        ctaSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      // Navigate to homepage CTA if not already there
+      window.location.href = "/#cta";
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -48,7 +70,7 @@ export default function Navbar() {
       <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Logo - Left */}
         <div className="shrink-0">
-          <a href="/" className="cursor-pointer">
+          <a href="/" className="cursor-pointer" onClick={handleLogoClick}>
             <Image
               src={
                 isScrolled
@@ -84,7 +106,10 @@ export default function Navbar() {
 
         {/* Contact Us Button - Right */}
         <div className="shrink-0">
-          <button className="w-[160px] h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer">
+          <button
+            onClick={handleContactClick}
+            className="w-[160px] h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
+          >
             <Image
               src="/icons/contact-us.svg"
               alt="Contact Us"
