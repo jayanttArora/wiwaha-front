@@ -1,7 +1,23 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function WhyChooseUs() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [
+    "/images/home/whyChooseUs/collage1.jpg",
+    "/images/home/whyChooseUs/collage1.jpg",
+    "/images/home/whyChooseUs/collage1.jpg",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
   return (
     <section className="bg-about-bg py-16">
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
@@ -79,14 +95,34 @@ export default function WhyChooseUs() {
             <p className="text-left font-roboto font-normal text-[16px] leading-[24px] text-[#505050] mb-[2px]">
               We don't just plan events, we craft unforgettable moments.
             </p>
-            {/* Image */}
+            {/* Image container with fade animation */}
             <div className="w-[320px] h-[320px] rounded-[10px] overflow-hidden relative">
-              <Image
-                src="/images/home/whyChooseUs/collage1.jpg"
-                alt="Collage"
-                fill
-                className="object-cover"
-              />
+              {images.map((src, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt={`Collage ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Dots indicator */}
+            <div className="flex flex-row gap-2 mt-2 justify-center">
+              {images.map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-[8px] h-[8px] rounded-full transition-colors duration-300 ${
+                    index === currentIndex ? "bg-[#666956]" : "bg-[#BBB7B4]"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
