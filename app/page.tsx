@@ -1,4 +1,4 @@
-import { Hero, Discover, WhatWeOffer, Reach, Navbar } from "@/components";
+import { Hero, Discover, WhatWeOffer, Reach, WhyChooseUs, Navbar } from "@/components";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Discover />
       <WhatWeOffer />
       <Reach />
+      <WhyChooseUs />
     </div>
   );
 }
