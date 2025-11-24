@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
             {/* Image */}
             <div className="w-[320px] h-[320px] rounded-[10px] overflow-hidden relative">
               <Image
-                src="/images/home/whyChooseUs/collage1.png"
+                src="/images/home/whyChooseUs/collage1.jpg"
                 alt="Collage"
                 fill
                 className="object-cover"
