@@ -100,7 +100,7 @@ export default function Pictures() {
             {showLeftArrow && (
               <button
                 onClick={handleLeftClick}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-[60px] h-[120px] bg-[#010101]/70 hover:bg-[#010101]/80 flex items-center justify-center transition-all duration-300"
                 aria-label="Previous images"
               >
                 <ChevronLeft className="w-6 h-6 text-white" />
@@ -128,7 +128,7 @@ export default function Pictures() {
             {showRightArrow && (
               <button
                 onClick={handleRightClick}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-[60px] h-[120px] bg-[#010101]/70 hover:bg-[#010101]/80 flex items-center justify-center transition-all duration-300"
                 aria-label="Next images"
               >
                 <ChevronRight className="w-6 h-6 text-white" />
