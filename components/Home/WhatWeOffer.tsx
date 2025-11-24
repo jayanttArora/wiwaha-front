@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function WhatWeOffer() {
   const offerings = [
@@ -61,6 +62,17 @@ export default function WhatWeOffer() {
                 <p className="text-left font-roboto font-normal text-[12px] leading-[18px] 480:text-[13px] 480:leading-[19px] 650:text-[14px] 650:leading-[21px] 1080:text-[15px] 1080:leading-[22px] 1440:text-[16px] 1440:leading-[24px] text-[#505050] max-w-[200px]">
                   {offering.text}
                 </p>
+              </div>
+
+              {/* Circle with arrow icon at bottom right */}
+              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center">
+                <Image
+                  src="/icons/arrow-up.svg"
+                  alt="Arrow up"
+                  width={20}
+                  height={20}
+                  className="h-5 w-5"
+                />
               </div>
             </div>
           ))}
