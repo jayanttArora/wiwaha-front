@@ -43,7 +43,7 @@ export default function WhatWeOffer() {
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="bg-[#EAE0D7] w-[300px] h-[300px] flex flex-col p-6 relative"
+              className="bg-[#EAE0D7] w-[300px] h-[300px] flex flex-col p-6 relative rounded-[20px]"
             >
               {/* Number in top left */}
               <div className="font-prata font-normal text-[32px] leading-[38px] text-[#402502]">
