@@ -18,6 +18,7 @@ const config: Config = {
         poppins: ["var(--font-poppins)"],
         "plus-jakarta-sans": ["var(--font-plus-jakarta-sans)"],
         "dm-sans": ["var(--font-dm-sans)"],
+        prata: ["var(--font-prata)"],
       },
       screens: {
         "1440": "1440px",
