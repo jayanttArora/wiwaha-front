@@ -7,5 +7,6 @@ export { default as Pictures } from "./Home/Pictures";
 export { default as Navbar } from "./Navbar/Navbar";
 export { default as FAQs } from "./Home/FAQs";
 export { default as Testimonials } from "./Home/Testimonials";
+export { default as EventVideos } from "./Home/EventVideos";
 
 
