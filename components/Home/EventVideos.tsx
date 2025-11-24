@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const EventVideos = () => {
   return (
-    <section className="bg-about-bg py-16">
+    <section className="bg-about-bg pt-16">
       {/* Headings Container with max-width */}
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* Main Heading */}
