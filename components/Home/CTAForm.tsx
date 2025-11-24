@@ -1,8 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 const CTAForm = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    name: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <section className="py-16" style={{ backgroundColor: "#EDE3D9" }}>
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
@@ -16,12 +35,59 @@ const CTAForm = () => {
           Ask whatever you need
         </p>
 
-        {/* Form content will go here */}
-        <div className="flex justify-start items-center">
-          <p className="text-left text-[#505050] font-roboto">
-            Form content coming soon...
-          </p>
-        </div>
+        {/* Contact Form */}
+        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+          {/* First Row - Email and Name */}
+          <div className="flex flex-row gap-8">
+            {/* Email Input */}
+            <div className="flex-1">
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email Address"
+                required
+                className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
+              />
+            </div>
+
+            {/* Name Input */}
+            <div className="flex-1">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                required
+                className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
+              />
+            </div>
+          </div>
+
+          {/* Second Row - Message */}
+          <div>
+            <input
+              type="text"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Message"
+              className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="bg-transparent border-0 font-roboto font-medium text-[28px] text-[#4C5637] cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              SUBMIT
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );
