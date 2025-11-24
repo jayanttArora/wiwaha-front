@@ -44,7 +44,7 @@ export default function WhatWeOffer() {
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] flex flex-col p-6 relative rounded-[20px]"
+              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] flex flex-col p-6 relative rounded-[20px] cursor-pointer transition-transform duration-300 ease-in-out hover:-translate-y-2"
             >
               {/* Number in top left */}
               <div className="font-prata font-normal text-[18px] leading-[22px] 480:text-[20px] 480:leading-[24px] 650:text-[24px] 650:leading-[29px] 1080:text-[28px] 1080:leading-[33px] 1440:text-[32px] 1440:leading-[38px] text-[#402502]">
@@ -65,7 +65,7 @@ export default function WhatWeOffer() {
               </div>
 
               {/* Circle with arrow icon at bottom right */}
-              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center cursor-pointer">
+              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:bg-[#C5B388]">
                 <ArrowUp className="h-6 w-6 text-white" strokeWidth={3} />
               </div>
             </div>
