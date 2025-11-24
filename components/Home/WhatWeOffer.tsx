@@ -44,7 +44,7 @@ export default function WhatWeOffer() {
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] flex flex-col p-6 relative rounded-[20px] cursor-pointer transition-transform duration-300 ease-in-out hover:-translate-y-2"
+              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] 1440:w-[400px] flex flex-col p-6 relative rounded-[20px] cursor-pointer transition-transform duration-300 ease-in-out hover:-translate-y-2"
             >
               {/* Number in top left */}
               <div className="font-prata font-normal text-[18px] leading-[22px] 480:text-[20px] 480:leading-[24px] 650:text-[24px] 650:leading-[29px] 1080:text-[28px] 1080:leading-[33px] 1440:text-[32px] 1440:leading-[38px] text-[#402502]">
