@@ -58,7 +58,7 @@ export default function WhatWeOffer() {
                 </h3>
 
                 {/* Text */}
-                <p className="text-left font-roboto font-normal text-[12px] leading-[18px] 480:text-[13px] 480:leading-[19px] 650:text-[14px] 650:leading-[21px] 1080:text-[15px] 1080:leading-[22px] 1440:text-[16px] 1440:leading-[24px] text-[#505050]">
+                <p className="text-left font-roboto font-normal text-[12px] leading-[18px] 480:text-[13px] 480:leading-[19px] 650:text-[14px] 650:leading-[21px] 1080:text-[15px] 1080:leading-[22px] 1440:text-[16px] 1440:leading-[24px] text-[#505050] max-w-[200px]">
                   {offering.text}
                 </p>
               </div>
