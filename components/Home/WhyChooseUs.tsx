@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
         </h1>
 
         {/* Sub-heading */}
-        <p className="text-center font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#9D7336] mb-16 mx-auto max-w-[600px]">
+        <p className="text-center font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#9D7336] mb-[124px] mx-auto max-w-[600px]">
           Balinese-inspired charm paired with expert planning for a stress-free,
           stunning celebration
         </p>
@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
                 </h2>
 
                 {/* Text */}
-                <p className="text-left font-roboto font-normal text-[16px] leading-[24px] text-[#505050]">
+                <p className="max-w-[325px] text-left font-roboto font-normal text-[16px] leading-[24px] text-[#505050]">
                   The essence of Wiwaha lies in its thoughtful harmony of
                   elegant spaces, tranquil surroundings, and heartfelt
                   hospitality. It is a venue where moments slow down, emotions
@@ -49,6 +49,11 @@ export default function WhyChooseUs() {
                   memory.
                 </p>
               </div>
+            </div>
+
+            {/* Red box overlapping on the right */}
+            <div className="w-[410px] h-[600px] border border-red-500 relative -ml-[100px] -mt-[60px] z-20">
+              {/* Red box content can be added here */}
             </div>
           </div>
 
