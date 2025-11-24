@@ -52,8 +52,16 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Red box overlapping on the right */}
-            <div className="w-[380px] h-[560px] bg-about-bg border border-red-500 rounded-[999px] relative -ml-[100px] -mt-[90px] z-20">
-              {/* Red box content can be added here */}
+            <div className="w-[380px] h-[560px] bg-about-bg border border-red-500 rounded-[999px] relative -ml-[100px] -mt-[90px] z-20 p-[15px] overflow-hidden">
+              {/* Inner container with image */}
+              <div className="w-full h-full rounded-[999px] overflow-hidden relative">
+                <Image
+                  src="/images/home/whyChooseUs/img1.png"
+                  alt="Why Choose Us"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
 
