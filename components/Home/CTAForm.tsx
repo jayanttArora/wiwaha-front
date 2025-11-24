@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 const CTAForm = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ const CTAForm = () => {
                 onChange={handleChange}
                 placeholder="Your Email Address"
                 required
-                className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
+                className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal 1440:text-[24px] 1080:text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
               />
             </div>
 
@@ -68,7 +69,7 @@ const CTAForm = () => {
                 onChange={handleChange}
                 placeholder="Your Name"
                 required
-                className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
+                className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal 1440:text-[24px] 1080:text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
               />
             </div>
           </div>
@@ -81,16 +82,23 @@ const CTAForm = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Message"
-              className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
+              className="w-full bg-transparent border-0 border-b border-[#4C5637] pb-2 font-roboto font-normal 1440:text-[24px] 1080:text-[20px] text-[#666F52] placeholder:text-[#666F52] focus:outline-none focus:border-[#4C5637] autofill:shadow-[0_0_0_1000px_#EDE3D9_inset] autofill:[-webkit-text-fill-color:#666F52]"
             />
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-[30px]">
             <button
               type="submit"
-              className="bg-transparent border-0 font-roboto font-medium text-[28px] text-[#4C5637] cursor-pointer hover:opacity-80 transition-opacity"
+              className="bg-transparent border-0 font-roboto font-medium 1440:text-[28px] 1080:text-[24px] text-[#4C5637] cursor-pointer hover:opacity-80 transition-opacity flex items-center"
             >
+              <Image
+                src="/icons/brown-ring-CTA.svg"
+                alt="Submit icon"
+                width={120}
+                height={120}
+                className="1440:h-[110px] 1080:h-[90px] 1440:-m-[25px] 1080:-m-[30px]"
+              />
               SUBMIT
             </button>
           </div>
