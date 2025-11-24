@@ -18,7 +18,13 @@ export default function Discover() {
         {/* Flex Container with 3 boxes */}
         <div className="flex flex-row justify-center gap-8">
           {/* Left Box - HISTORY */}
-          <div className="w-[420px] h-[660px] flex flex-col mt-[50px]">
+          <div 
+            className="w-[420px] h-[660px] flex flex-col mt-[50px] transition-shadow duration-300 hover:shadow-md"
+            style={{
+              borderTopLeftRadius: "300px",
+              borderTopRightRadius: "300px",
+            }}
+          >
             {/* Image Container */}
             <div
               className="h-[350px] w-full bg-gray-200 overflow-hidden relative"
@@ -50,7 +56,13 @@ export default function Discover() {
           </div>
 
           {/* Middle Box - SPACES */}
-          <div className="w-[420px] h-[830px] flex flex-col">
+          <div 
+            className="w-[420px] h-[830px] flex flex-col transition-shadow duration-300 hover:shadow-md"
+            style={{
+              borderTopLeftRadius: "300px",
+              borderTopRightRadius: "300px",
+            }}
+          >
             {/* Image Container */}
             <div
               className="h-[550px] w-full bg-gray-200 overflow-hidden relative"
@@ -81,7 +93,13 @@ export default function Discover() {
           </div>
 
           {/* Right Box - SERVICES */}
-          <div className="w-[420px] h-[660px] flex flex-col mt-[50px]">
+          <div 
+            className="w-[420px] h-[660px] flex flex-col mt-[50px] transition-shadow duration-300 hover:shadow-md"
+            style={{
+              borderTopLeftRadius: "300px",
+              borderTopRightRadius: "300px",
+            }}
+          >
             {/* Image Container */}
             <div
               className="h-[350px] w-full bg-gray-200 overflow-hidden relative"
