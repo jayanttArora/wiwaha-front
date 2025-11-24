@@ -8,6 +8,7 @@ export default function Pictures() {
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(9);
   const [contentWidth, setContentWidth] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
   const images = Array.from({ length: 10 }, (_, i) => i + 1);
 
@@ -54,6 +55,18 @@ export default function Pictures() {
     }
   };
 
+  const handlePrevMainImage = () => {
+    if (selectedImage > 1) {
+      setSelectedImage(selectedImage - 1);
+    }
+  };
+
+  const handleNextMainImage = () => {
+    if (selectedImage < images.length) {
+      setSelectedImage(selectedImage + 1);
+    }
+  };
+
   const visibleImages = images.slice(startIndex, startIndex + visibleCount);
   const showLeftArrow = startIndex > 0;
   const showRightArrow = startIndex < images.length - visibleCount;
@@ -61,29 +74,57 @@ export default function Pictures() {
   return (
     <section className="py-16" style={{ backgroundColor: "#666F52" }}>
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
-        {/* Main Heading */}
-        <h1 className="text-left font-prata font-normal text-[32px] leading-[100%] 480:text-[40px] 650:text-[48px] 1080:text-[56px] 1440:text-[64px] tracking-[0%] text-[#FFFFFF] mb-6">
-          WIWAHA IN PICTURES
-        </h1>
+        {/* Headings Wrapper */}
+        <div className="w-full max-w-[1230px] mx-auto">
+          {/* Main Heading */}
+          <h1 className="text-left font-prata font-normal text-[32px] leading-[100%] 480:text-[40px] 650:text-[48px] 1080:text-[56px] 1440:text-[64px] tracking-[0%] text-[#FFFFFF] mb-6">
+            WIWAHA IN PICTURES
+          </h1>
 
-        {/* Sub-heading */}
-        <p className="text-left font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#D6A663] mb-8">
-          Enjoy the moment together
-        </p>
+          {/* Sub-heading */}
+          <p className="text-left font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#D6A663] mb-8">
+            Enjoy the moment together
+          </p>
+        </div>
 
-        {/* Image Box */}
-        <div className="w-full max-w-[1230px] h-[620px] mx-auto rounded-[12px] overflow-hidden relative mb-8">
-          <Image
-            src="/images/home/pictures/img1.png"
-            alt="Wiwaha in Pictures"
-            fill
-            className="object-cover"
-          />
+        {/* Image Box Wrapper */}
+        <div className="relative w-full max-w-[1230px] mx-auto mb-8">
+          {/* Previous Main Image Arrow */}
+          {selectedImage > 1 && (
+            <button
+              onClick={handlePrevMainImage}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-[60px] h-[60px] rounded-full bg-[#D2C094] flex items-center justify-center hover:bg-[#c4b083] transition-colors duration-300 cursor-pointer"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-8 h-8 text-white" />
+            </button>
+          )}
+
+          {/* Main Image Container */}
+          <div className="w-full h-[620px] rounded-[12px] overflow-hidden relative">
+            <Image
+              src={`/images/home/pictures/img${selectedImage}.png`}
+              alt="Wiwaha in Pictures"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Next Main Image Arrow */}
+          {selectedImage < images.length && (
+            <button
+              onClick={handleNextMainImage}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-[60px] h-[60px] rounded-full bg-[#D2C094] flex items-center justify-center hover:bg-[#c4b083] transition-colors duration-300 cursor-pointer"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-8 h-8 text-white" />
+            </button>
+          )}
         </div>
 
         {/* Heading for first image */}
         <h2 className="font-roboto font-medium text-[24px] text-[#FFFFFF] mb-6 text-center">
-          Heading 1
+          Heading {selectedImage}
         </h2>
 
         {/* Outer Container for centering and max-width */}
@@ -100,7 +141,7 @@ export default function Pictures() {
             {showLeftArrow && (
               <button
                 onClick={handleLeftClick}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-[60px] h-[120px] bg-[#010101]/70 hover:bg-[#010101]/80 flex items-center justify-center transition-all duration-300"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-[60px] h-[120px] bg-[#010101]/70 hover:bg-[#010101]/80 flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Previous images"
               >
                 <ChevronLeft className="w-6 h-6 text-white" />
@@ -112,7 +153,10 @@ export default function Pictures() {
               {visibleImages.map((imgNum, index) => (
                 <div key={imgNum} className="shrink-0">
                   {/* Square Image Box */}
-                  <div className="w-[120px] h-[120px] overflow-hidden relative">
+                  <div 
+                    className="w-[120px] h-[120px] overflow-hidden relative cursor-pointer active:scale-95 transition-transform duration-200"
+                    onClick={() => setSelectedImage(imgNum)}
+                  >
                     <Image
                       src={`/images/home/pictures/img${imgNum}.png`}
                       alt={`Wiwaha Picture ${imgNum}`}
@@ -128,7 +172,7 @@ export default function Pictures() {
             {showRightArrow && (
               <button
                 onClick={handleRightClick}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-[60px] h-[120px] bg-[#010101]/70 hover:bg-[#010101]/80 flex items-center justify-center transition-all duration-300"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-[60px] h-[120px] bg-[#010101]/70 hover:bg-[#010101]/80 flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Next images"
               >
                 <ChevronRight className="w-6 h-6 text-white" />
