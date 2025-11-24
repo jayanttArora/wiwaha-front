@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Prata, DM_Sans, Roboto } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Prata,
+  DM_Sans,
+  Roboto,
+  Raleway,
+  Albert_Sans,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +38,18 @@ const roboto = Roboto({
   weight: ["400"],
 });
 
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const albertSans = Albert_Sans({
+  variable: "--font-albert-sans",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "Wiwaha",
   description: "Wiwaha",
@@ -43,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} ${dmSans.variable} ${roboto.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} ${dmSans.variable} ${roboto.variable} ${raleway.variable} ${albertSans.variable} antialiased`}
       >
         {children}
       </body>

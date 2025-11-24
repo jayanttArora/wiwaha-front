@@ -1,4 +1,4 @@
-import { Hero, Discover, WhatWeOffer, Reach, WhyChooseUs, Pictures, Navbar, FAQs, Testimonials, EventVideos, CTAForm } from "@/components";
+import { Hero, Discover, WhatWeOffer, Reach, WhyChooseUs, Pictures, Navbar, FAQs, Testimonials, EventVideos, CTAForm, Footer } from "@/components";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <Testimonials />
       <EventVideos />
       <CTAForm />
+      <Footer />
     </div>
   );
 }

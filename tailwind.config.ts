@@ -19,6 +19,8 @@ const config: Config = {
         "plus-jakarta-sans": ["var(--font-plus-jakarta-sans)"],
         "dm-sans": ["var(--font-dm-sans)"],
         prata: ["var(--font-prata)"],
+        raleway: ["var(--font-raleway)"],
+        "albert-sans": ["var(--font-albert-sans)"],
       },
       screens: {
         "1440": "1440px",
