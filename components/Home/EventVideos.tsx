@@ -31,10 +31,18 @@ const EventVideos = () => {
           {/* Play Icon - Centered */}
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
+              src="/icons/white-ring-SE.svg"
+              alt="Ring"
+              width={320}
+              height={320}
+              className="absolute cursor-pointer"
+            />
+            <Image
               src="/icons/play.svg"
               alt="Play"
-              width={20}
-              height={20}
+              width={30}
+              height={30}
+              className="cursor-pointer"
             />
           </div>
         </div>
