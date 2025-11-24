@@ -26,7 +26,7 @@ export default function WhatWeOffer() {
 
   return (
     <section className="bg-about-bg py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* Main Heading */}
         <h1 className="text-left font-prata font-normal text-[64px] leading-[100%] tracking-[0%] text-[#4C5637] mb-6">
           What We Offer
