@@ -1,22 +1,36 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function WhyChooseUs() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const images = [
     "/images/home/whyChooseUs/collage1.jpg",
     "/images/home/whyChooseUs/collage1.jpg",
     "/images/home/whyChooseUs/collage1.jpg",
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
+  };
 
-    return () => clearInterval(interval);
+  const stopInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startInterval();
+    return () => stopInterval();
   }, [images.length]);
   return (
     <section className="bg-about-bg py-16">
@@ -90,13 +104,17 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Collage box */}
-          <div className="w-[320px] bg-green-500 flex flex-col justify-end">
+          <div className="w-[320px] flex flex-col justify-end gap-2">
             {/* Text above image */}
             <p className="text-left font-roboto font-normal text-[16px] leading-[24px] text-[#505050] mb-[2px]">
               We don't just plan events, we craft unforgettable moments.
             </p>
             {/* Image container with fade animation */}
-            <div className="w-[320px] h-[320px] rounded-[10px] overflow-hidden relative">
+            <div
+              className="w-[320px] h-[320px] rounded-[10px] overflow-hidden relative cursor-pointer"
+              onMouseEnter={stopInterval}
+              onMouseLeave={startInterval}
+            >
               {images.map((src, index) => (
                 <div
                   key={index}
