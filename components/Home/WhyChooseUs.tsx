@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
         </p>
 
         {/* Flex-row container */}
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-row gap-20">
           {/* Left: flex-row container */}
           <div className="flex flex-row">
             {/* Box with Essence of Wiwaha */}
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
               </div>
             </div>
 
-            {/* Red box overlapping on the right */}
+            {/* Gradient border - overlapping on the right */}
             <div
               className="w-[380px] h-[560px] rounded-[999px] relative -ml-[100px] -mt-[90px] z-20 p-[1px] overflow-hidden"
               style={{
@@ -73,9 +73,21 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Right box */}
-          <div className="w-[320px]">
-            {/* Right box content can be added here */}
+          {/* Collage box */}
+          <div className="w-[320px] bg-green-500 flex flex-col justify-end">
+            {/* Text above image */}
+            <p className="text-left font-roboto font-normal text-[16px] leading-[24px] text-[#505050] mb-[2px]">
+              We don't just plan events, we craft unforgettable moments.
+            </p>
+            {/* Image */}
+            <div className="w-[320px] h-[320px] rounded-[10px] overflow-hidden relative">
+              <Image
+                src="/images/home/whyChooseUs/collage1.png"
+                alt="Collage"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
