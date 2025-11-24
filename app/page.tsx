@@ -1,4 +1,4 @@
-import { Hero, Discover, WhatWeOffer, Reach, WhyChooseUs, Pictures, Navbar, FAQs } from "@/components";
+import { Hero, Discover, WhatWeOffer, Reach, WhyChooseUs, Pictures, Navbar, FAQs, Testimonials } from "@/components";
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <WhyChooseUs />
       <Pictures />
       <FAQs />
+      <Testimonials />
     </div>
   );
 }
