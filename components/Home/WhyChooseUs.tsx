@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
 
             {/* Gradient border - overlapping on the right */}
             <div
-              className="w-[380px] h-[560px] rounded-[999px] relative -ml-[100px] -mt-[90px] z-20 p-[1px] overflow-hidden"
+              className="w-[380px] h-[560px] rounded-[999px] relative -ml-[100px] -mt-[90px] z-20 p-px overflow-hidden"
               style={{
                 background:
                   "linear-gradient(167deg, rgba(210, 192, 148, 1) 0%, rgba(210, 192, 148, 1) 10%, rgba(243, 238, 234, 1) 64%, rgba(243, 238, 234, 1) 100%)",
