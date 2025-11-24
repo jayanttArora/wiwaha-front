@@ -18,8 +18,8 @@ export default function Discover() {
         {/* Flex Container with 3 boxes */}
         <div className="flex flex-row justify-center gap-8">
           {/* Left Box - HISTORY */}
-          <div 
-            className="w-[420px] h-[660px] flex flex-col mt-[50px] transition-shadow duration-300 hover:shadow-md"
+          <div
+            className="w-[420px] h-[660px] flex flex-col mt-[50px] transition-shadow duration-300 hover:shadow-md cursor-pointer"
             style={{
               borderTopLeftRadius: "300px",
               borderTopRightRadius: "300px",
@@ -56,8 +56,8 @@ export default function Discover() {
           </div>
 
           {/* Middle Box - SPACES */}
-          <div 
-            className="w-[420px] h-[830px] flex flex-col transition-shadow duration-300 hover:shadow-md"
+          <div
+            className="w-[420px] h-[830px] flex flex-col transition-shadow duration-300 hover:shadow-md cursor-pointer"
             style={{
               borderTopLeftRadius: "300px",
               borderTopRightRadius: "300px",
@@ -93,8 +93,8 @@ export default function Discover() {
           </div>
 
           {/* Right Box - SERVICES */}
-          <div 
-            className="w-[420px] h-[660px] flex flex-col mt-[50px] transition-shadow duration-300 hover:shadow-md"
+          <div
+            className="w-[420px] h-[660px] flex flex-col mt-[50px] transition-shadow duration-300 hover:shadow-md cursor-pointer"
             style={{
               borderTopLeftRadius: "300px",
               borderTopRightRadius: "300px",
