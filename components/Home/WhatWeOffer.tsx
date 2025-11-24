@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import { ArrowUp } from "lucide-react";
 
 export default function WhatWeOffer() {
   const offerings = [
@@ -65,14 +65,8 @@ export default function WhatWeOffer() {
               </div>
 
               {/* Circle with arrow icon at bottom right */}
-              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center">
-                <Image
-                  src="/icons/arrow-up.svg"
-                  alt="Arrow up"
-                  width={20}
-                  height={20}
-                  className="h-5 w-5"
-                />
+              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center cursor-pointer">
+                <ArrowUp className="h-6 w-6 text-white" strokeWidth={3} />
               </div>
             </div>
           ))}
