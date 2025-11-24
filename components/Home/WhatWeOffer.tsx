@@ -28,37 +28,37 @@ export default function WhatWeOffer() {
     <section className="bg-about-bg py-16">
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* Main Heading */}
-        <h1 className="text-left font-prata font-normal text-[64px] leading-[100%] tracking-[0%] text-[#4C5637] mb-6">
+        <h1 className="text-left font-prata font-normal text-[32px] leading-[100%] 480:text-[40px] 650:text-[48px] 1080:text-[56px] 1440:text-[64px] tracking-[0%] text-[#4C5637] mb-6">
           What We Offer
         </h1>
 
         {/* Sub-heading */}
-        <p className="text-left font-roboto font-normal text-[20px] leading-[150%] tracking-[1.6px] text-[#9D7336] mb-16">
+        <p className="text-left font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#9D7336] mb-16">
           Where every detail is crafted with care to create moments that feel
           effortless, memorable, and beautifully curated
         </p>
 
         {/* Flex Container with 4 boxes */}
-        <div className="flex flex-row justify-start gap-8">
+        <div className="flex flex-col 650:flex-row 650:flex-wrap 1080:flex-nowrap justify-start gap-8">
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="bg-[#EAE0D7] w-[300px] h-[300px] flex flex-col p-6 relative rounded-[20px]"
+              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] flex flex-col p-6 relative rounded-[20px]"
             >
               {/* Number in top left */}
-              <div className="font-prata font-normal text-[32px] leading-[38px] text-[#402502]">
+              <div className="font-prata font-normal text-[18px] leading-[22px] 480:text-[20px] 480:leading-[24px] 650:text-[24px] 650:leading-[29px] 1080:text-[28px] 1080:leading-[33px] 1440:text-[32px] 1440:leading-[38px] text-[#402502]">
                 {offering.number}
               </div>
 
               {/* Content at bottom */}
               <div className="flex flex-col justify-end flex-1 gap-2">
                 {/* Heading */}
-                <h3 className="text-left font-prata font-normal text-[24px] leading-[30px] text-[#4C5637]">
+                <h3 className="text-left font-prata font-normal text-[16px] leading-[20px] 480:text-[18px] 480:leading-[22px] 650:text-[20px] 650:leading-[25px] 1080:text-[22px] 1080:leading-[27px] 1440:text-[24px] 1440:leading-[30px] text-[#4C5637]">
                   {offering.heading}
                 </h3>
 
                 {/* Text */}
-                <p className="text-left font-roboto font-normal text-[16px] leading-[24px] text-[#505050]">
+                <p className="text-left font-roboto font-normal text-[12px] leading-[18px] 480:text-[13px] 480:leading-[19px] 650:text-[14px] 650:leading-[21px] 1080:text-[15px] 1080:leading-[22px] 1440:text-[16px] 1440:leading-[24px] text-[#505050]">
                   {offering.text}
                 </p>
               </div>
