@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components";
+import { Navbar, Footer } from "@/components";
 import Hero from "@/components/AboutUs/Hero";
+import OurStory from "@/components/AboutUs/OurStory";
 
 export const metadata: Metadata = {
-  title: "About Us - Our Story",
+  title: "Wiwaha",
   description: "Learn about our story and journey",
 };
 
@@ -12,6 +13,8 @@ export default function AboutUsPage() {
     <div className="min-h-screen bg-about-bg">
       <Navbar />
       <Hero />
+      <OurStory />
+      <Footer />
     </div>
   );
 }
