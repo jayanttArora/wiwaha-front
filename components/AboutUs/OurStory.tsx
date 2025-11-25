@@ -4,7 +4,7 @@ export default function OurStory() {
   return (
     <div className="py-28">
       {/* Headings Section with max-width */}
-      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] text-center mb-16">
+      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] text-center mb-32">
         <div className="relative">
           {/* Background Image - Centered */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto pointer-events-none z-0">
@@ -32,10 +32,10 @@ export default function OurStory() {
       {/* Full-width Content Box */}
       <div className="w-full bg-[#EDE3D9] py-16">
         <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
-          <div className="flex flex-row">
+          <div className="flex flex-row gap-[120px]">
             {/* First Column - Text Content */}
             <div className="max-w-[540px]">
-              <p className="text-left font-roboto font-normal text-[20px] text-[#505050] mb-6">
+              <p className="text-left font-roboto font-normal text-[20px] text-[#505050] mb-6 tracking-[1.4px]">
                 Wiwaha by Praman is more than just a venue – it's a celebration
                 of Balinese heritage and contemporary elegance. Nestled in the
                 heart of Bali, our venue was created with a vision to provide
@@ -43,7 +43,7 @@ export default function OurStory() {
                 traditional architecture with modern luxury.
               </p>
 
-              <p className="text-left font-roboto font-normal text-[20px] text-[#505050] mb-6">
+              <p className="text-left font-roboto font-normal text-[20px] text-[#505050] mb-6 tracking-[1.4px]">
                 The name "Wiwaha" itself signifies sacred union and celebration,
                 reflecting our commitment to making every event hosted at our
                 venue a memorable and meaningful experience. From intimate
@@ -51,7 +51,7 @@ export default function OurStory() {
                 dreams to come to life.
               </p>
 
-              <p className="text-left font-roboto font-normal text-[20px] text-[#505050]">
+              <p className="text-left font-roboto font-normal text-[20px] text-[#505050] tracking-[1.4px]">
                 Our team of dedicated professionals brings years of expertise in
                 event management, combining meticulous attention to detail with
                 warm Balinese hospitality to ensure that every moment at Wiwaha
@@ -59,9 +59,51 @@ export default function OurStory() {
               </p>
             </div>
 
-            {/* Second Column - Placeholder for now */}
-            <div className="flex-1">
-              {/* Second column content will go here */}
+            {/* Second Column - Image Grid */}
+            <div className="flex-1 flex flex-row gap-4 -mt-[120px]">
+              {/* Column 1 */}
+              <div className="flex flex-col gap-4">
+                {/* Row 1 - Square */}
+                <div className="w-[300px] h-[300px] relative overflow-hidden rounded-[10px]">
+                  <Image
+                    src="/images/about/ourStory/imgC1R1.png"
+                    alt="Our Story"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Row 2 - Rectangle */}
+                <div className="w-[300px] h-[410px] relative overflow-hidden rounded-[10px]">
+                  <Image
+                    src="/images/about/ourStory/imgC1R2.png"
+                    alt="Our Story"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Column 2 */}
+              <div className="flex flex-col gap-4">
+                {/* Row 1 - Rectangle */}
+                <div className="w-[300px] h-[410px] relative overflow-hidden rounded-[10px]">
+                  <Image
+                    src="/images/about/ourStory/imgC2R1.png"
+                    alt="Our Story"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Row 2 - Square */}
+                <div className="w-[300px] h-[300px] relative overflow-hidden rounded-[10px]">
+                  <Image
+                    src="/images/about/ourStory/imgC2R2.png"
+                    alt="Our Story"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
