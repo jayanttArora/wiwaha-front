@@ -69,7 +69,7 @@ export default function OurStory() {
                     src="/images/about/ourStory/imgC1R1.png"
                     alt="Our Story"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
                   />
                 </div>
                 {/* Row 2 - Rectangle */}
@@ -78,7 +78,7 @@ export default function OurStory() {
                     src="/images/about/ourStory/imgC1R2.png"
                     alt="Our Story"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
                   />
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function OurStory() {
                     src="/images/about/ourStory/imgC2R1.png"
                     alt="Our Story"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
                   />
                 </div>
                 {/* Row 2 - Square */}
@@ -100,7 +100,7 @@ export default function OurStory() {
                     src="/images/about/ourStory/imgC2R2.png"
                     alt="Our Story"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
                   />
                 </div>
               </div>
