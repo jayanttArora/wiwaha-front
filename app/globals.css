@@ -38,6 +38,12 @@
   background-color: #f3eeea;
 }
 
+/* Global focus outline color */
+*:focus,
+*:focus-visible {
+  outline-color: #4c5637;
+}
+
 /********************************************/
 /* MEDIA QUERIES */
 /********************************************/
