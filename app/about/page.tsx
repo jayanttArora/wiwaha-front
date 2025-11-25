@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar, Footer } from "@/components";
 import Hero from "@/components/AboutUs/Hero";
 import OurStory from "@/components/AboutUs/OurStory";
+import Values from "@/components/AboutUs/Values";
 
 export const metadata: Metadata = {
   title: "Wiwaha",
@@ -14,6 +15,7 @@ export default function AboutUsPage() {
       <Navbar />
       <Hero />
       <OurStory />
+      <Values />
       <Footer />
     </div>
   );
