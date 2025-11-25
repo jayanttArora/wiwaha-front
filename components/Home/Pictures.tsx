@@ -21,7 +21,7 @@ export default function Pictures() {
       if (!containerRef.current) return;
 
       const containerWidth = containerRef.current.offsetWidth;
-      
+
       // Calculate: n boxes = n * boxWidth + (n-1) * gap
       // Solving for n: containerWidth >= n * boxWidth + (n-1) * gap
       // containerWidth >= n * (boxWidth + gap) - gap
@@ -29,9 +29,9 @@ export default function Pictures() {
       // n <= (containerWidth + gap) / (boxWidth + gap)
       const maxBoxes = Math.floor((containerWidth + GAP) / (BOX_WIDTH + GAP));
       const count = Math.min(maxBoxes, images.length);
-      
+
       setVisibleCount(count);
-      
+
       // Calculate exact width needed for the content
       // width = count * BOX_WIDTH + (count - 1) * GAP
       const exactWidth = count * BOX_WIDTH + (count - 1) * GAP;
@@ -72,17 +72,42 @@ export default function Pictures() {
   const showRightArrow = startIndex < images.length - visibleCount;
 
   return (
-    <section className="py-16" style={{ backgroundColor: "#666F52" }}>
-      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
+    <section
+      className="pt-20 pb-16 relative overflow-hidden"
+      style={{ backgroundColor: "#666F52" }}
+    >
+      {/* Background Image - Top Right */}
+      <div className="absolute top-0 right-0 w-auto h-auto pointer-events-none z-0">
+        <Image
+          src="/bgRings/white-upper-curve-left.svg"
+          alt=""
+          width={420}
+          height={400}
+          className="object-contain"
+        />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* Headings Wrapper */}
-        <div className="w-full max-w-[1230px] mx-auto">
+        <div className="w-full max-w-[1230px] mx-auto relative mb-8">
+          {/* Background Image - Left Center */}
+          <div className="absolute top-[40%] left-[-80px] -translate-y-1/2 w-auto h-auto pointer-events-none z-0">
+            <Image
+              src="/bgRings/brown-ring-N-small.svg"
+              alt=""
+              width={600}
+              height={600}
+              className="object-contain w-[260px] h-[260px]"
+            />
+          </div>
+
           {/* Main Heading */}
-          <h1 className="text-left font-prata font-normal text-[32px] leading-[100%] 480:text-[40px] 650:text-[48px] 1080:text-[56px] 1440:text-[64px] tracking-[0%] text-[#FFFFFF] mb-6">
+          <h1 className="relative z-10 text-left font-prata font-normal text-[32px] leading-[100%] 480:text-[40px] 650:text-[48px] 1080:text-[56px] 1440:text-[64px] tracking-[0%] text-[#FFFFFF] mb-6">
             WIWAHA IN PICTURES
           </h1>
 
           {/* Sub-heading */}
-          <p className="text-left font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#D6A663] mb-8">
+          <p className="relative z-10 text-left font-roboto font-normal text-[12px] leading-[150%] 480:text-[14px] 480:leading-[21px] 650:text-[16px] 650:leading-[24px] 1080:text-[18px] 1080:leading-[27px] 1440:text-[20px] 1440:leading-[30px] tracking-[1.6px] text-[#D6A663]">
             Enjoy the moment together
           </p>
         </div>
@@ -128,14 +153,14 @@ export default function Pictures() {
         </h2>
 
         {/* Outer Container for centering and max-width */}
-        <div 
+        <div
           ref={containerRef}
           className="w-full max-w-[1230px] mx-auto flex justify-center"
         >
           {/* Carousel Container with dynamic width */}
           <div
             className="relative"
-            style={{ width: contentWidth ? `${contentWidth}px` : 'auto' }}
+            style={{ width: contentWidth ? `${contentWidth}px` : "auto" }}
           >
             {/* Left Arrow */}
             {showLeftArrow && (
@@ -153,7 +178,7 @@ export default function Pictures() {
               {visibleImages.map((imgNum, index) => (
                 <div key={imgNum} className="shrink-0">
                   {/* Square Image Box */}
-                  <div 
+                  <div
                     className="w-[120px] h-[120px] overflow-hidden relative cursor-pointer active:scale-95 transition-transform duration-200"
                     onClick={() => setSelectedImage(imgNum)}
                   >
