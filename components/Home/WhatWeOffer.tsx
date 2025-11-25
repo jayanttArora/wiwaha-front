@@ -27,7 +27,7 @@ export default function WhatWeOffer() {
   ];
 
   return (
-    <section className="bg-about-bg py-16 relative overflow-hidden">
+    <section className="bg-about-bg py-20 relative overflow-hidden">
       {/* Background Image - Top Right */}
       <div className="absolute top-0 right-0 w-auto h-auto pointer-events-none z-0">
         <Image

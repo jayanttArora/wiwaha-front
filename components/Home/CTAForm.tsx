@@ -26,7 +26,7 @@ const CTAForm = () => {
   return (
     <section
       id="cta"
-      className="pb-16"
+      className="pb-32"
       style={{
         backgroundColor: "#EDE3D9",
         paddingTop: "calc(var(--navbar-height) + 60px)",

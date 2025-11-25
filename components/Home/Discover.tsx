@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Discover() {
   return (
-    <section className="bg-about-bg py-16">
+    <section className="bg-about-bg py-20">
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* Headings with Background Image */}
         <div className="relative mb-16">

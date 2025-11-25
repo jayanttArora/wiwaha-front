@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
     return () => stopInterval();
   }, [images.length]);
   return (
-    <section className="bg-about-bg py-16 relative overflow-hidden">
+    <section className="bg-about-bg py-20 relative overflow-hidden">
       {/* Background Image - Top Left */}
       <div className="absolute top-0 left-0 w-auto h-auto pointer-events-none z-0">
         <Image

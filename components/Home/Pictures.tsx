@@ -73,7 +73,7 @@ export default function Pictures() {
 
   return (
     <section
-      className="pt-20 pb-16 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
       style={{ backgroundColor: "#666F52" }}
     >
       {/* Background Image - Top Right */}

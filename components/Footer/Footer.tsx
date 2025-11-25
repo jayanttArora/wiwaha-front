@@ -65,9 +65,12 @@ const Footer = () => {
                 height={24}
                 className="shrink-0"
               />
-              <p className="font-albert-sans font-normal text-[16px] text-white border-b border-white pb-1">
+              <a
+                href="tel:9169935666"
+                className="font-albert-sans font-normal text-[16px] text-white border-b border-white pb-1 hover:opacity-80 transition-opacity"
+              >
                 9169935666
-              </p>
+              </a>
             </div>
 
             {/* Email */}
@@ -79,9 +82,12 @@ const Footer = () => {
                 height={24}
                 className="shrink-0"
               />
-              <p className="font-albert-sans font-normal text-[16px] text-white">
+              <a
+                href="mailto:wiwaha@gmail.com"
+                className="font-albert-sans font-normal text-[16px] text-white hover:opacity-80 transition-opacity"
+              >
                 wiwaha@gmail.com
-              </p>
+              </a>
             </div>
           </div>
 
