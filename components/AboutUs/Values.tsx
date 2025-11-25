@@ -13,7 +13,7 @@ export default function Values() {
                 src="/images/about/values/values.jpg"
                 alt="Our Values"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
               />
             </div>
 
@@ -101,12 +101,12 @@ export default function Values() {
               </div>
 
               {/* Row 3 - Image */}
-              <div className="w-full relative flex-1">
+              <div className="w-full relative flex-1 overflow-hidden rounded-[10px]">
                 <Image
                   src="/images/about/values/mission1.jpg"
                   alt="Our Mission"
                   fill
-                  className="object-cover rounded-[10px]"
+                  className="object-cover transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
                 />
               </div>
             </div>
@@ -114,12 +114,12 @@ export default function Values() {
             {/* Column 2 - 30% width */}
             <div className="w-[30%] h-[400px] flex flex-col">
               {/* Row 1 - Image */}
-              <div className="w-full relative h-[250px] mb-4">
+              <div className="w-full relative h-[250px] mb-4 overflow-hidden rounded-[10px]">
                 <Image
                   src="/images/about/values/mission2.jpg"
                   alt="Mission 2"
                   fill
-                  className="object-cover object-[center_40%] rounded-[10px]"
+                  className="object-cover object-[center_40%] transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
                 />
               </div>
 
@@ -135,12 +135,12 @@ export default function Values() {
 
             {/* Column 3 - 30% width */}
             <div className="w-[30%] h-[400px]">
-              <div className="w-full h-full relative">
+              <div className="w-full h-full relative overflow-hidden rounded-[10px]">
                 <Image
                   src="/images/about/values/mission3.jpg"
                   alt="Mission 3"
                   fill
-                  className="object-cover rounded-[10px]"
+                  className="object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
                 />
               </div>
             </div>
