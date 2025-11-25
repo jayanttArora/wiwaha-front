@@ -31,7 +31,7 @@ const EventVideos = () => {
           {/* Play Icon - Centered */}
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
-              src="/icons/white-ring-SE.svg"
+              src="/bgRings/white-ring-SE.svg"
               alt="Ring"
               width={320}
               height={320}

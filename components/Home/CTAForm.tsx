@@ -93,7 +93,7 @@ const CTAForm = () => {
               className="bg-transparent border-0 font-roboto font-medium 1440:text-[28px] 1080:text-[24px] text-[#4C5637] cursor-pointer hover:opacity-80 transition-opacity flex items-center"
             >
               <Image
-                src="/icons/brown-ring-CTA.svg"
+                src="/bgRings/brown-ring-CTA.svg"
                 alt="Submit icon"
                 width={120}
                 height={120}
