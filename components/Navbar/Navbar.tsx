@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const isHomePage = pathname === "/";
 
   useEffect(() => {
@@ -49,15 +50,7 @@ export default function Navbar() {
   };
 
   const handleContactClick = () => {
-    if (isHomePage) {
-      const ctaSection = document.getElementById("cta");
-      if (ctaSection) {
-        ctaSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    } else {
-      // Navigate to homepage CTA if not already there
-      window.location.href = "/#cta";
-    }
+    router.push("/contact");
   };
 
   return (

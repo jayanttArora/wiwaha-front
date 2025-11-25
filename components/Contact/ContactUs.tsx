@@ -4,7 +4,23 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [eventType, setEventType] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = {
+      name,
+      email,
+      phone,
+      eventType,
+      message,
+    };
+    console.log("Form Data:", formData);
+  };
 
   const fieldBaseClasses =
     "w-full rounded-[10px] bg-white font-roboto text-[16px] font-normal text-[#4C5637] placeholder:font-roboto placeholder:text-[16px] placeholder:font-normal placeholder:text-[#878787] placeholder:tracking-[1.1px] focus:outline-none";
@@ -48,7 +64,7 @@ export default function ContactUs() {
               {/* 3rd row - Contact form */}
               <form
                 className="flex flex-1 flex-col rounded-[10px] bg-[#EDE3D9] p-6"
-                onSubmit={(event) => event.preventDefault()}
+                onSubmit={handleSubmit}
               >
                 <div className="flex flex-1 flex-col gap-6">
                   {/* Contact form heading */}
@@ -77,6 +93,9 @@ export default function ContactUs() {
                           type="text"
                           placeholder="Your Name"
                           className={inputWithIconClasses}
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="relative w-full 650:w-1/2">
@@ -91,6 +110,9 @@ export default function ContactUs() {
                           type="email"
                           placeholder="Your Email"
                           className={inputWithIconClasses}
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
                         />
                       </div>
                     </div>
@@ -109,6 +131,9 @@ export default function ContactUs() {
                           type="tel"
                           placeholder="Your Phone No."
                           className={inputWithIconClasses}
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="relative w-full 650:w-1/2">
@@ -119,6 +144,7 @@ export default function ContactUs() {
                             eventType ? "text-[#4C5637]" : "text-[#878787]"
                           }`}
                           style={{ letterSpacing: "1.1px" }}
+                          required
                         >
                           <option value="" disabled>
                             Event Type
@@ -155,6 +181,8 @@ export default function ContactUs() {
                         placeholder="Type your message here..."
                         className={`${textareaClasses} h-full min-h-[120px]`}
                         style={{ letterSpacing: "1.1px" }}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                       />
                     </div>
                   </div>
@@ -162,7 +190,7 @@ export default function ContactUs() {
                   {/* Submit button */}
                   <button
                     type="submit"
-                    className="w-full rounded-[100px] bg-[#D2C094] py-4 text-center font-roboto text-[16px] font-semibold tracking-[1px] text-white"
+                    className="w-full rounded-[100px] bg-[#D2C094] py-4 text-center font-roboto text-[16px] font-semibold tracking-[1px] text-white cursor-pointer hover:bg-[#C5B388] active:bg-[#B8A67C] transition-colors duration-200"
                   >
                     Send Message
                   </button>
@@ -178,7 +206,7 @@ export default function ContactUs() {
               {/* Grid boxes */}
               <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-4">
                 {/* Box 1 - Location (col 1, row 1) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4">
+                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/location-brown.svg"
@@ -207,7 +235,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 2 - Phone (col 2, row 1) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4">
+                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/phone.svg"
@@ -235,7 +263,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 3 - Email (col 1, row 2) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4">
+                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/email.svg"
@@ -263,7 +291,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 4 - Business Hours (col 2, row 2) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4">
+                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/business.svg"
@@ -299,7 +327,7 @@ export default function ContactUs() {
                   width={800}
                   height={600}
                   className="aspect-[2.7/1] w-full rounded-[10px] object-cover"
-                  style={{ opacity: "90%" }}
+                  style={{ opacity: "90%", objectPosition: "center 85%" }}
                 />
               </div>
             </div>

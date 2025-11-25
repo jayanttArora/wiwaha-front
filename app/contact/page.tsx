@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar, Footer } from "@/components";
 import ContactUs from "@/components/Contact/ContactUs";
+import PlanYourEvent from "@/components/Contact/PlanYourEvent";
 
 export const metadata: Metadata = {
   title: "Wiwaha",
@@ -12,6 +13,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-about-bg">
       <Navbar />
       <ContactUs />
+      <PlanYourEvent />
       <Footer />
     </div>
   );

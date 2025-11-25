@@ -7,7 +7,7 @@ const PlanYourEvent = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/about/plan/plan.png"
+          src="/images/contact/plan/bg.png"
           alt="Background"
           fill
           className="object-cover"
