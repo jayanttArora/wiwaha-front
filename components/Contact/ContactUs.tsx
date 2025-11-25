@@ -326,8 +326,8 @@ export default function ContactUs() {
                   alt="Contact us"
                   width={800}
                   height={600}
-                  className="aspect-[2.7/1] w-full rounded-[10px] object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
-                  style={{ opacity: "90%", objectPosition: "center 85%" }}
+                  className="aspect-[2.7/1] w-full rounded-[10px] object-cover transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
+                  style={{ opacity: "90%", objectPosition: "center 95%" }}
                 />
               </div>
             </div>
