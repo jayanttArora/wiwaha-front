@@ -320,13 +320,13 @@ export default function ContactUs() {
               </div>
 
               {/* Image */}
-              <div className="w-full">
+              <div className="w-full overflow-hidden rounded-[10px]">
                 <Image
                   src="/images/contact/contactUs/img1.jpg"
                   alt="Contact us"
                   width={800}
                   height={600}
-                  className="aspect-[2.7/1] w-full rounded-[10px] object-cover"
+                  className="aspect-[2.7/1] w-full rounded-[10px] object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
                   style={{ opacity: "90%", objectPosition: "center 85%" }}
                 />
               </div>
