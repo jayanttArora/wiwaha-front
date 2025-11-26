@@ -1,9 +1,37 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { useLazyLoadSection } from "@/hooks/useLazyLoadSection";
+import { preloadNextImages } from "@/utils/preloadImages";
 
 export default function Discover() {
+  // Preload images when section is approaching
+  const { sectionRef } = useLazyLoadSection({
+    rootMargin: "300px",
+    onVisible: () => {
+      // Preload images for this section and next 3 sections
+      preloadNextImages([
+        "/images/home/discover/img1.png",
+        "/images/home/discover/img2.png",
+        "/images/home/discover/img3.png",
+        "/bgRings/brown-ring-N-big.svg",
+        // Next sections (WhatWeOffer)
+        "/bgRings/brown-ring-W.svg",
+        // Next sections (WhyChooseUs)
+        "/images/home/whyChooseUs/bg1.png",
+        "/images/home/whyChooseUs/img1.png",
+        "/images/home/whyChooseUs/collage1.jpg",
+        // Next sections (Pictures - first few)
+        "/images/home/pictures/img1.jpeg",
+        "/images/home/pictures/img2.jpeg",
+        "/images/home/pictures/img3.jpeg",
+      ]);
+    },
+  });
+
   return (
-    <section className="bg-about-bg py-20">
+    <section ref={sectionRef} className="bg-about-bg py-20">
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* Headings with Background Image */}
         <div className="relative mb-16">
@@ -15,6 +43,7 @@ export default function Discover() {
               width={180}
               height={180}
               className="object-contain"
+              loading="lazy"
             />
           </div>
 
@@ -52,6 +81,7 @@ export default function Discover() {
                 alt="History"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </div>
 
@@ -90,6 +120,7 @@ export default function Discover() {
                 alt="Spaces"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </div>
 
@@ -127,6 +158,7 @@ export default function Discover() {
                 alt="Services"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </div>
 

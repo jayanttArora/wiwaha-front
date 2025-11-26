@@ -2,8 +2,38 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { useLazyLoadSection } from "@/hooks/useLazyLoadSection";
+import { preloadNextImages } from "@/utils/preloadImages";
 
 export default function WhyChooseUs() {
+  // Preload images when section is approaching
+  const { sectionRef } = useLazyLoadSection({
+    rootMargin: "300px",
+    onVisible: () => {
+      // Preload images for next 3 sections
+      preloadNextImages([
+        // Next sections (Pictures)
+        "/images/home/pictures/img1.jpeg",
+        "/images/home/pictures/img2.jpeg",
+        "/images/home/pictures/img3.jpeg",
+        "/images/home/pictures/img4.jpeg",
+        "/images/home/pictures/img5.jpeg",
+        "/bgRings/white-upper-curve-left.svg",
+        "/bgRings/brown-ring-N-small.svg",
+        // Next sections (Testimonials)
+        "/images/home/testimonials/bg.png",
+        "/images/home/testimonials/user1.png",
+        "/images/home/testimonials/user2.png",
+        "/images/home/testimonials/user3.png",
+        "/icons/star.svg",
+        // Next sections (EventVideos)
+        "/images/home/eventVideos/img1.png",
+        "/bgRings/brown-ring-E.svg",
+        "/bgRings/white-ring-SE.svg",
+        "/icons/play.svg",
+      ]);
+    },
+  });
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const images = [
@@ -33,7 +63,7 @@ export default function WhyChooseUs() {
     return () => stopInterval();
   }, [images.length]);
   return (
-    <section className="bg-about-bg py-20 relative overflow-hidden">
+    <section ref={sectionRef} className="bg-about-bg py-20 relative overflow-hidden">
       {/* Background Image - Top Left */}
       <div className="absolute top-0 left-0 w-auto h-auto pointer-events-none z-0">
         <Image
@@ -42,6 +72,7 @@ export default function WhyChooseUs() {
           width={200}
           height={200}
           className="object-contain"
+          loading="lazy"
         />
       </div>
 
@@ -71,6 +102,7 @@ export default function WhyChooseUs() {
                   fill
                   className="object-cover object-bottom-right"
                   style={{ objectPosition: "bottom right" }}
+                  loading="lazy"
                 />
               </div>
 
@@ -108,6 +140,7 @@ export default function WhyChooseUs() {
                     alt="Why Choose Us"
                     fill
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -138,6 +171,7 @@ export default function WhyChooseUs() {
                     alt={`Collage ${index + 1}`}
                     fill
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}

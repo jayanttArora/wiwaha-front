@@ -2,10 +2,16 @@
 
 import React from "react";
 import Image from "next/image";
+import { useLazyLoadSection } from "@/hooks/useLazyLoadSection";
 
 const EventVideos = () => {
+  // This is one of the last sections, so we just enable lazy loading
+  const { sectionRef } = useLazyLoadSection({
+    rootMargin: "300px",
+  });
+
   return (
-    <section className="bg-about-bg pt-16 relative overflow-hidden">
+    <section ref={sectionRef} className="bg-about-bg pt-16 relative overflow-hidden">
       {/* Background Image - Top Left */}
       <div className="absolute top-0 left-0 w-auto h-auto pointer-events-none z-0">
         <Image
@@ -14,6 +20,7 @@ const EventVideos = () => {
           width={200}
           height={200}
           className="object-contain"
+          loading="lazy"
         />
       </div>
 
@@ -38,6 +45,7 @@ const EventVideos = () => {
             alt="Event Video"
             fill
             className="object-cover"
+            loading="lazy"
           />
           {/* Play Icon - Centered */}
           <div className="absolute inset-0 flex items-center justify-center">
@@ -47,6 +55,7 @@ const EventVideos = () => {
               width={320}
               height={320}
               className="absolute cursor-pointer"
+              loading="lazy"
             />
             <Image
               src="/icons/play.svg"
@@ -54,6 +63,7 @@ const EventVideos = () => {
               width={30}
               height={30}
               className="cursor-pointer"
+              loading="lazy"
             />
           </div>
         </div>

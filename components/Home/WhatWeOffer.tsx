@@ -1,8 +1,38 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
+import { useLazyLoadSection } from "@/hooks/useLazyLoadSection";
+import { preloadNextImages } from "@/utils/preloadImages";
 
 export default function WhatWeOffer() {
+  // Preload images when section is approaching
+  const { sectionRef } = useLazyLoadSection({
+    rootMargin: "300px",
+    onVisible: () => {
+      // Preload images for next 3 sections
+      preloadNextImages([
+        // Next sections (WhyChooseUs)
+        "/images/home/whyChooseUs/bg1.png",
+        "/images/home/whyChooseUs/img1.png",
+        "/images/home/whyChooseUs/collage1.jpg",
+        "/bgRings/brown-ring-NE.svg",
+        // Next sections (Pictures)
+        "/images/home/pictures/img1.jpeg",
+        "/images/home/pictures/img2.jpeg",
+        "/images/home/pictures/img3.jpeg",
+        "/images/home/pictures/img4.jpeg",
+        "/bgRings/white-upper-curve-left.svg",
+        "/bgRings/brown-ring-N-small.svg",
+        // Next sections (Testimonials)
+        "/images/home/testimonials/bg.png",
+        "/images/home/testimonials/user1.png",
+        "/images/home/testimonials/user2.png",
+        "/images/home/testimonials/user3.png",
+      ]);
+    },
+  });
   const offerings = [
     {
       number: "01.",
@@ -27,7 +57,7 @@ export default function WhatWeOffer() {
   ];
 
   return (
-    <section className="bg-about-bg py-20 relative overflow-hidden">
+    <section ref={sectionRef} className="bg-about-bg py-20 relative overflow-hidden">
       {/* Background Image - Top Right */}
       <div className="absolute top-0 right-0 w-auto h-auto pointer-events-none z-0">
         <Image
@@ -36,6 +66,7 @@ export default function WhatWeOffer() {
           width={200}
           height={200}
           className="object-contain"
+          loading="lazy"
         />
       </div>
 

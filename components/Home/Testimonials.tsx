@@ -2,8 +2,24 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useLazyLoadSection } from "@/hooks/useLazyLoadSection";
+import { preloadNextImages } from "@/utils/preloadImages";
 
 const Testimonials = () => {
+  // Preload images when section is approaching
+  const { sectionRef } = useLazyLoadSection({
+    rootMargin: "300px",
+    onVisible: () => {
+      // Preload images for next 3 sections
+      preloadNextImages([
+        // Next sections (EventVideos)
+        "/images/home/eventVideos/img1.png",
+        "/bgRings/brown-ring-E.svg",
+        "/bgRings/white-ring-SE.svg",
+        "/icons/play.svg",
+      ]);
+    },
+  });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -25,7 +41,7 @@ const Testimonials = () => {
   }, [isPaused]);
 
   return (
-    <section className="py-16 bg-[#4C5637] relative overflow-hidden">
+    <section ref={sectionRef} className="py-16 bg-[#4C5637] relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -33,6 +49,7 @@ const Testimonials = () => {
           alt="Background"
           fill
           className="object-cover"
+          loading="lazy"
         />
       </div>
 
@@ -69,6 +86,7 @@ const Testimonials = () => {
                         alt="Star"
                         width={18}
                         height={18}
+                        loading="lazy"
                       />
                     ))}
                   </div>
@@ -87,6 +105,7 @@ const Testimonials = () => {
                       width={48}
                       height={48}
                       className="rounded-full"
+                      loading="lazy"
                     />
                     <div className="flex flex-col text-left">
                       <span className="font-prata font-normal text-[18px] text-[#402502]">
@@ -117,6 +136,7 @@ const Testimonials = () => {
                         alt="Star"
                         width={18}
                         height={18}
+                        loading="lazy"
                       />
                     ))}
                   </div>
@@ -135,6 +155,7 @@ const Testimonials = () => {
                       width={48}
                       height={48}
                       className="rounded-full"
+                      loading="lazy"
                     />
                     <div className="flex flex-col text-left">
                       <span className="font-prata font-normal text-[18px] text-[#402502]">
@@ -165,6 +186,7 @@ const Testimonials = () => {
                         alt="Star"
                         width={18}
                         height={18}
+                        loading="lazy"
                       />
                     ))}
                   </div>
@@ -183,6 +205,7 @@ const Testimonials = () => {
                       width={48}
                       height={48}
                       className="rounded-full"
+                      loading="lazy"
                     />
                     <div className="flex flex-col text-left">
                       <span className="font-prata font-normal text-[18px] text-[#402502]">

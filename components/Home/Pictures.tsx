@@ -3,8 +3,34 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLazyLoadSection } from "@/hooks/useLazyLoadSection";
+import { preloadNextImages } from "@/utils/preloadImages";
 
 export default function Pictures() {
+  // Preload images when section is approaching
+  const { sectionRef } = useLazyLoadSection({
+    rootMargin: "300px",
+    onVisible: () => {
+      // Preload remaining pictures and next 3 sections
+      const allPictureImages = Array.from({ length: 10 }, (_, i) => 
+        `/images/home/pictures/img${i + 1}.jpeg`
+      );
+      preloadNextImages([
+        ...allPictureImages,
+        // Next sections (Testimonials)
+        "/images/home/testimonials/bg.png",
+        "/images/home/testimonials/user1.png",
+        "/images/home/testimonials/user2.png",
+        "/images/home/testimonials/user3.png",
+        "/icons/star.svg",
+        // Next sections (EventVideos)
+        "/images/home/eventVideos/img1.png",
+        "/bgRings/brown-ring-E.svg",
+        "/bgRings/white-ring-SE.svg",
+        "/icons/play.svg",
+      ]);
+    },
+  });
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(9);
   const [contentWidth, setContentWidth] = useState(0);
@@ -73,6 +99,7 @@ export default function Pictures() {
 
   return (
     <section
+      ref={sectionRef}
       className="py-20 relative overflow-hidden"
       style={{ backgroundColor: "#666F52" }}
     >
@@ -84,6 +111,7 @@ export default function Pictures() {
           width={420}
           height={400}
           className="object-contain"
+          loading="lazy"
         />
       </div>
 
@@ -98,6 +126,7 @@ export default function Pictures() {
               width={600}
               height={600}
               className="object-contain w-[260px] h-[260px]"
+              loading="lazy"
             />
           </div>
 
@@ -135,6 +164,7 @@ export default function Pictures() {
               alt="Wiwaha in Pictures"
               fill
               className="object-cover"
+              loading="lazy"
             />
           </div>
 
@@ -193,6 +223,7 @@ export default function Pictures() {
                       alt={`Wiwaha Picture ${imgNum}`}
                       fill
                       className="object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
