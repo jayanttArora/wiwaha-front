@@ -13,6 +13,11 @@ export default function WhatWeOffer() {
     onVisible: () => {
       // Preload images for next 3 sections
       preloadNextImages([
+        // Current section hover images
+        "/images/home/whatWeOffer/event-space.jpg",
+        "/images/home/whatWeOffer/plan.jpg",
+        "/images/home/whatWeOffer/esential.jpg",
+        "/images/home/whatWeOffer/entertainment.jpg",
         // Next sections (WhyChooseUs)
         "/images/home/whyChooseUs/bg1.png",
         "/images/home/whyChooseUs/img1.png",
@@ -38,21 +43,25 @@ export default function WhatWeOffer() {
       number: "01.",
       heading: "Event Spaces",
       text: "Beautiful venues for every celebration.",
+      image: "/images/home/whatWeOffer/event-space.jpg",
     },
     {
       number: "02.",
       heading: "Wedding Planning",
       text: "Seamless support from start to finish.",
+      image: "/images/home/whatWeOffer/plan.jpg",
     },
     {
       number: "03.",
       heading: "Wedding Essentials",
       text: "Everything you need for your big day.",
+      image: "/images/home/whatWeOffer/esential.jpg",
     },
     {
       number: "04.",
       heading: "Entertainment Services",
       text: "Capture moments and elevate the vibe.",
+      image: "/images/home/whatWeOffer/entertainment.jpg",
     },
   ];
 
@@ -87,28 +96,45 @@ export default function WhatWeOffer() {
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] 1440:w-[400px] flex flex-col p-6 relative rounded-[20px] cursor-pointer transition-transform duration-300 ease-in-out hover:-translate-y-2"
+              className="bg-[#EAE0D7] w-full aspect-square 650:w-[calc(50%-16px)] 1080:w-[300px] 1440:w-[400px] flex flex-col p-6 relative rounded-[20px] cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-2 overflow-hidden group"
             >
-              {/* Number in top left */}
-              <div className="font-prata font-normal text-[18px] leading-[22px] 480:text-[20px] 480:leading-[24px] 650:text-[24px] 650:leading-[29px] 1080:text-[28px] 1080:leading-[33px] 1440:text-[32px] 1440:leading-[38px] text-[#402502]">
-                {offering.number}
+              {/* Background Image - appears on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out rounded-[20px]"
+                style={{
+                  backgroundImage: `url(${offering.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                {/* Overlay to ensure text readability */}
+                <div className="absolute inset-0 bg-black/30 rounded-[20px]"></div>
               </div>
 
-              {/* Content at bottom */}
-              <div className="flex flex-col justify-end flex-1 gap-2">
-                {/* Heading */}
-                <h3 className="text-left font-prata font-normal text-[16px] leading-[20px] 480:text-[18px] 480:leading-[22px] 650:text-[20px] 650:leading-[25px] 1080:text-[22px] 1080:leading-[27px] 1440:text-[24px] 1440:leading-[30px] text-[#4C5637]">
-                  {offering.heading}
-                </h3>
+              {/* Content wrapper with relative z-index */}
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Number in top left */}
+                <div className="font-prata font-normal text-[18px] leading-[22px] 480:text-[20px] 480:leading-[24px] 650:text-[24px] 650:leading-[29px] 1080:text-[28px] 1080:leading-[33px] 1440:text-[32px] 1440:leading-[38px] text-[#402502] group-hover:text-white transition-colors duration-300">
+                  {offering.number}
+                </div>
 
-                {/* Text */}
-                <p className="text-left font-roboto font-normal text-[12px] leading-[18px] 480:text-[13px] 480:leading-[19px] 650:text-[14px] 650:leading-[21px] 1080:text-[15px] 1080:leading-[22px] 1440:text-[16px] 1440:leading-[24px] text-[#505050] max-w-[200px]">
-                  {offering.text}
-                </p>
+                {/* Content at bottom */}
+                <div className="flex flex-col justify-end flex-1 gap-2">
+                  {/* Heading */}
+                  <h3 className="text-left font-prata font-normal text-[16px] leading-[20px] 480:text-[18px] 480:leading-[22px] 650:text-[20px] 650:leading-[25px] 1080:text-[22px] 1080:leading-[27px] 1440:text-[24px] 1440:leading-[30px] text-[#4C5637] group-hover:text-white transition-colors duration-300">
+                    {offering.heading}
+                  </h3>
+
+                  {/* Text */}
+                  <p className="text-left font-roboto font-normal text-[12px] leading-[18px] 480:text-[13px] 480:leading-[19px] 650:text-[14px] 650:leading-[21px] 1080:text-[15px] 1080:leading-[22px] 1440:text-[16px] 1440:leading-[24px] text-[#505050] group-hover:text-white/90 transition-colors duration-300 max-w-[200px]">
+                    {offering.text}
+                  </p>
+                </div>
               </div>
 
               {/* Circle with arrow icon at bottom right */}
-              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:bg-[#C5B388]">
+              <div className="absolute bottom-6 right-6 w-10 h-10 bg-[#D2C094] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:bg-[#C5B388] z-10">
                 <ArrowUp className="h-6 w-6 text-white" strokeWidth={3} />
               </div>
             </div>
