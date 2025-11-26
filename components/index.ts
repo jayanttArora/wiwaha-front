@@ -9,7 +9,5 @@ export { default as FAQs } from "./Home/FAQs";
 export { default as Testimonials } from "./Home/Testimonials";
 export { default as EventVideos } from "./Home/EventVideos";
 export { default as CTAForm } from "./Home/CTAForm";
-export { default as Footer } from "./Footer/Footer";
 export { default as PlanYourEvent } from "./AboutUs/PlanYourEvent";
-
-
+export { default as Footer } from "./Footer/Footer";
