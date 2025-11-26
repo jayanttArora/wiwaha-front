@@ -31,7 +31,7 @@ export default function Hero({
               and premium tailored services for weddings & exclusive events
             </p>
           </div>
-          <div className="absolute top-[25px] right-[calc(50%+430px/2+20px)] w-[240px] h-[2px] bg-[#D6A663] -translate-y-1/2"></div>
+          <div className="absolute top-[25px] right-[calc(50%+430px/2+20px)] 1440:w-[240px] 1280:w-[200px] 1080:w-[180px] w-[150px] h-[2px] bg-[#D6A663] -translate-y-1/2"></div>
         </div>
         <div className="flex justify-center mt-[40px]">
           <img
@@ -43,7 +43,7 @@ export default function Hero({
 
         {/* White Box Section */}
         <div className="flex justify-center mt-8">
-          <div className="max-w-[1300px] bg-white px-8 py-6 rounded-[20px]">
+          <div className="1440:max-w-[1300px] 1280:max-w-[1200px] 1080:max-w-[1000px] 850:max-w-[800px] 650:max-w-[600px] 480:max-w-[400px] max-w-[300px] bg-white px-8 py-6 rounded-[20px]">
             <div className="grid grid-cols-3 gap-8 items-center relative">
               {/* Left Column */}
               <div className="text-left">
