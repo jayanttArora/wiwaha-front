@@ -50,7 +50,8 @@ export default function FAQs() {
             <p className="font-dm-sans font-medium text-[16px] text-[#585858] mt-8 mb-8 max-w-[540px]">
               Curious about drones or aerial photography? Our experts answer the
               most common questions to help you choose the right drone, master
-              flying skills, and capture stunning shots with confidence and ease.
+              flying skills, and capture stunning shots with confidence and
+              ease.
             </p>
 
             {/* Contact Button */}
@@ -85,18 +86,20 @@ export default function FAQs() {
                   >
                     {faq.question}
                   </h3>
-                  <div className="shrink-0 w-[40px] h-[40px] rounded-full bg-[#FFFFFF] flex items-center justify-center">
+                  <div className="shrink-0 w-[40px] h-[40px] rounded-full bg-[#FFFFFF] flex items-center justify-center transition-transform duration-300 ease-in-out">
                     {openIndex === index ? (
-                      <X className="w-4 h-4 text-[#D2C094]" />
+                      <X className="w-4 h-4 text-[#D2C094] transition-all duration-200 ease-in-out animate-in fade-in-0 zoom-in-50" />
                     ) : (
-                      <Plus className="w-4 h-4 text-[#1C1C1C]" />
+                      <Plus className="w-4 h-4 text-[#1C1C1C] transition-all duration-200 ease-in-out animate-in fade-in-0 zoom-in-50" />
                     )}
                   </div>
                 </div>
-                
+
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openIndex === index ? "max-h-[200px] opacity-100 mt-4" : "max-h-0 opacity-0"
+                    openIndex === index
+                      ? "max-h-[200px] opacity-100 mt-4"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <p className="font-dm-sans font-normal text-[16px] text-[#585858] text-left max-w-[550px]">
