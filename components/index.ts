@@ -11,3 +11,4 @@ export { default as EventVideos } from "./Home/EventVideos";
 export { default as CTAForm } from "./Home/CTAForm";
 export { default as PlanYourEvent } from "./AboutUs/PlanYourEvent";
 export { default as Footer } from "./Footer/Footer";
+export { default as WeddingEvents } from "./Events/WeddingEvents";
