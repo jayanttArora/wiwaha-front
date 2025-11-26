@@ -1,26 +1,119 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@config "../tailwind.config.ts";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-about-bg: #f3eeea;
+  --color-about-heading: #4c5637;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-prata: var(--font-prata);
+  --font-dm-sans: var(--font-dm-sans);
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --navbar-height: 90px;
+}
+
+/* Custom text selection color */
+::selection {
+  background-color: #f3eeea;
+}
+
+::-moz-selection {
+  background-color: #f3eeea;
+}
+
+/* Change text color for white text when selected */
+.text-white::selection,
+.text-\[\#FFF\]::selection,
+.text-\[\#FFFFFF\]::selection {
+  color: #4c5637;
+  background-color: #f3eeea;
+}
+
+.text-white::-moz-selection,
+.text-\[\#FFF\]::-moz-selection,
+.text-\[\#FFFFFF\]::-moz-selection {
+  color: #4c5637;
+  background-color: #f3eeea;
+}
+
+/* Global focus outline color */
+*:focus,
+*:focus-visible {
+  outline-color: #4c5637;
+}
+
+/********************************************/
+/* MEDIA QUERIES */
+/********************************************/
+
+/********************************************/
+/* Maximum Widths */
+/********************************************/
+
+/********************************************/
+/* BELOW 1550px [Bigger Desktops] */
+/********************************************/
+
+@media (max-width: 1550px) {
+}
+
+/********************************************/
+/* BELOW 1280px [Smaller Desktops] */
+/********************************************/
+
+@media (max-width: 1280px) {
+}
+
+/********************************************/
+/* BELOW 1080px [Landscape Tablets] */
+/********************************************/
+
+@media (max-width: 1080px) {
+}
+
+/********************************************/
+/* BELOW 850px [Portrait Tablets] */
+/********************************************/
+
+@media (max-width: 850px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --navbar-height: 70px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/********************************************/
+/* BELOW 650px [Landscape Phones] */
+/********************************************/
+
+@media (max-width: 650px) {
+}
+
+/********************************************/
+/* BELOW 480px [Portrait Phones] */
+/********************************************/
+
+@media (max-width: 480px) {
+}
+
+/********************************************/
+/* BELOW 380px [Small Portrait Phones] */
+/********************************************/
+
+@media (max-width: 380px) {
+}
+
+/********************************************/
+/* NAVBAR STYLES */
+/********************************************/
+
+.nav-item {
+  position: relative;
+  font-weight: 400 !important;
+  transition: text-shadow 0.2s ease !important;
+}
+
+.nav-item:hover {
+  text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor !important;
 }
