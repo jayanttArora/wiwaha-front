@@ -14,8 +14,13 @@ export default function Navbar() {
     const handleScroll = () => {
       // Only check scroll on home page
       if (isHomePage) {
-        // Check if scrolled past Hero section (assuming Hero is full viewport height)
-        setIsScrolled(window.scrollY > window.innerHeight * 0.8);
+        // Get the Hero section element to check its actual height
+        const heroSection = document.getElementById("hero");
+        if (heroSection) {
+          const heroHeight = heroSection.offsetHeight;
+          // Change navbar when user scrolls past the Hero section
+          setIsScrolled(window.scrollY > heroHeight - 140); // -140px for smooth transition before fully leaving Hero
+        }
       }
     };
 
