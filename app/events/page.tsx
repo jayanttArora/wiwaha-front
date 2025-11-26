@@ -1,13 +1,14 @@
 import React from "react";
 import EventsWeHost from "@/components/Events/EventsWeHost";
-import { Navbar, WeddingEvents } from "@/components";
+import { Navbar, WeddingEvents, Footer } from "@/components";
 
 const EventsPage = () => {
   return (
-    <main>
+    <main className="bg-about-bg">
       <Navbar />
       <EventsWeHost />
       <WeddingEvents />
+      <Footer />
     </main>
   );
 };
