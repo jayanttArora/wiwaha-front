@@ -3,7 +3,7 @@ import { Navbar } from "@/components";
 import ComingSoon from "@/components/ComingSoon";
 
 export const metadata: Metadata = {
-  title: "Wiwaha - Gallery",
+  title: "Wiwaha",
   description: "View our gallery",
 };
 
