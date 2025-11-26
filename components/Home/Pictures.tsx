@@ -115,15 +115,18 @@ export default function Pictures() {
         {/* Image Box Wrapper */}
         <div className="relative w-full max-w-[1230px] mx-auto mb-8">
           {/* Previous Main Image Arrow */}
-          {selectedImage > 1 && (
-            <button
-              onClick={handlePrevMainImage}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-[60px] h-[60px] rounded-full bg-[#D2C094] flex items-center justify-center hover:bg-[#c4b083] transition-colors duration-300 cursor-pointer"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="w-8 h-8 text-white" />
-            </button>
-          )}
+          <button
+            onClick={handlePrevMainImage}
+            disabled={selectedImage === 1}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-[60px] h-[60px] rounded-full flex items-center justify-center transition-colors duration-300 ${
+              selectedImage === 1
+                ? "bg-[#FFFFFF80] cursor-not-allowed"
+                : "bg-[#D2C094] hover:bg-[#c4b083] cursor-pointer"
+            }`}
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
 
           {/* Main Image Container */}
           <div className="w-full h-[620px] rounded-[12px] overflow-hidden relative">
@@ -136,15 +139,18 @@ export default function Pictures() {
           </div>
 
           {/* Next Main Image Arrow */}
-          {selectedImage < images.length && (
-            <button
-              onClick={handleNextMainImage}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-[60px] h-[60px] rounded-full bg-[#D2C094] flex items-center justify-center hover:bg-[#c4b083] transition-colors duration-300 cursor-pointer"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-8 h-8 text-white" />
-            </button>
-          )}
+          <button
+            onClick={handleNextMainImage}
+            disabled={selectedImage === images.length}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-[60px] h-[60px] rounded-full flex items-center justify-center transition-colors duration-300 ${
+              selectedImage === images.length
+                ? "bg-[#FFFFFF80] cursor-not-allowed"
+                : "bg-[#D2C094] hover:bg-[#c4b083] cursor-pointer"
+            }`}
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
         </div>
 
         {/* Heading for first image */}
