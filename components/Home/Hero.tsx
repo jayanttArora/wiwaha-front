@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface HeroProps {
   title?: string;
@@ -14,11 +15,20 @@ export default function Hero({
   return (
     <section
       id="hero"
-      className={`min-h-screen bg-about-bg bg-cover bg-center bg-no-repeat ${className}`}
-      style={{ backgroundImage: "url(/images/home/hero/hero-img.png)" }}
+      className={`min-h-screen relative overflow-hidden ${className}`}
     >
+      {/* Background Image with Priority Loading */}
+      <Image
+        src="/images/home/hero/hero-img.png"
+        alt="Wiwaha Hero Background"
+        fill
+        priority
+        quality={90}
+        className="object-cover -z-10"
+      />
+
       <div
-        className="text-center pb-16"
+        className="text-center pb-16 relative z-10"
         style={{ paddingTop: "calc(var(--navbar-height) + 100px)" }}
       >
         <h1 className="font-prata font-normal text-[64px] leading-[75px] tracking-[0%] text-[#FFF]">
@@ -34,10 +44,13 @@ export default function Hero({
           <div className="absolute top-[25px] right-[calc(50%+430px/2+20px)] 1440:w-[240px] 1280:w-[200px] 1080:w-[180px] w-[150px] h-[2px] bg-[#D6A663] -translate-y-1/2"></div>
         </div>
         <div className="flex justify-center mt-[40px]">
-          <img
+          <Image
             src="/images/home/hero/discover-hero.png"
             alt="Discover Hero"
-            className="h-[140px] object-contain"
+            width={400}
+            height={140}
+            priority
+            className="h-[140px] w-auto object-contain"
           />
         </div>
 
