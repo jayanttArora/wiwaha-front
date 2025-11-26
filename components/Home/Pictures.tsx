@@ -131,7 +131,7 @@ export default function Pictures() {
           {/* Main Image Container */}
           <div className="w-full h-[620px] rounded-[12px] overflow-hidden relative">
             <Image
-              src={`/images/home/pictures/img${selectedImage}.png`}
+              src={`/images/home/pictures/img${selectedImage}.jpeg`}
               alt="Wiwaha in Pictures"
               fill
               className="object-cover"
@@ -189,7 +189,7 @@ export default function Pictures() {
                     onClick={() => setSelectedImage(imgNum)}
                   >
                     <Image
-                      src={`/images/home/pictures/img${imgNum}.png`}
+                      src={`/images/home/pictures/img${imgNum}.jpeg`}
                       alt={`Wiwaha Picture ${imgNum}`}
                       fill
                       className="object-cover"
