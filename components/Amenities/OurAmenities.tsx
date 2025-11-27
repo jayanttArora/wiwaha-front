@@ -1,30 +1,33 @@
 import React from "react";
 import Image from "next/image";
 
-const EventsWeHost = () => {
+const OurAmenities = () => {
   return (
     <section className="mb-6 bg-[#F3EEEA] pt-[calc(var(--navbar-height)+32px)]">
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] relative overflow-hidden rounded-[10px] py-20 group">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/events/eventsWeHost/bg.png"
+            src="/images/amenities/ourAmenities/bg.jpg"
             alt="Background"
             fill
             className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100 cursor-pointer"
           />
         </div>
 
+        {/* Background Overlay */}
+        <div className="absolute inset-0 z-1 bg-[#00000099]"></div>
+
         <div className="relative z-10">
           {/* Main Heading */}
           <h2 className="max-w-[1100px] mx-auto font-prata font-normal text-[64px] text-[#FFFFFF] text-center mb-2">
-            Events We Host
+            Our Amenities
           </h2>
 
           {/* Sub-heading */}
           <p className="max-w-[900px] mx-auto font-roboto font-normal text-[20px] text-[#FFFFFF] text-center mb-8">
-            From intimate ceremonies to grand celebrations, Wiwaha by Praman is
-            the perfect venue for all your special occasions
+            Discover the exceptional facilities and services that make Wiwaha by
+            Praman the perfect venue for your special occasion
           </p>
         </div>
       </div>
@@ -32,4 +35,4 @@ const EventsWeHost = () => {
   );
 };
 
-export default EventsWeHost;
+export default OurAmenities;
