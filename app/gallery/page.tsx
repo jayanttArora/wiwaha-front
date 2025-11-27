@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components";
-import ComingSoon from "@/components/ComingSoon";
+import Heading from "@/components/Gallery/Heading";
 
 export const metadata: Metadata = {
   title: "Wiwaha",
@@ -11,7 +11,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-about-bg">
       <Navbar />
-      <ComingSoon />
+      <Heading />
     </div>
   );
 }
