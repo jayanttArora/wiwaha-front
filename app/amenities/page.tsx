@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components";
+import { Navbar, Footer } from "@/components";
 import OurAmenities from "@/components/Amenities/OurAmenities";
 import List from "@/components/Amenities/List";
+import AddServices from "@/components/Amenities/AddServices";
+import PlanYourEvent from "@/components/Events/PlanYourEvent";
 
 export const metadata: Metadata = {
   title: "Wiwaha",
@@ -14,6 +16,9 @@ export default function AmenitiesPage() {
       <Navbar />
       <OurAmenities />
       <List />
+      <AddServices />
+      <PlanYourEvent />
+      <Footer />
     </div>
   );
 }
