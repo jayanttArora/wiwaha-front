@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface EventSectionProps {
   title: string;
@@ -18,6 +18,7 @@ const EventSection = ({
   const [visibleEvents, setVisibleEvents] = useState(4);
   const [startIndex, setStartIndex] = useState(0);
   const [buttonSize, setButtonSize] = useState("60");
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,6 +52,22 @@ const EventSection = ({
       return Math.min(prevIndex, maxStartIndex);
     });
   }, [visibleEvents, totalEvents]);
+
+  // Disable scrolling when overlay is open
+  useEffect(() => {
+    if (selectedImage) {
+      // Disable scrolling and hide scrollbar
+      document.body.style.overflow = "hidden";
+    } else {
+      // Re-enable scrolling
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup: restore scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
 
   const events = Array.from({ length: totalEvents }, (_, i) => ({
     id: i + 1,
@@ -141,7 +158,10 @@ const EventSection = ({
         {visibleEventsList.map((event) => (
           <div key={event.id} className="flex flex-col flex-1">
             {/* Image Box */}
-            <div className="w-full aspect-square rounded-[10px] overflow-hidden 1080:mb-4 mb-3">
+            <div
+              className="w-full aspect-square rounded-[10px] overflow-hidden 1080:mb-4 mb-3 cursor-pointer"
+              onClick={() => setSelectedImage(event.image)}
+            >
               <Image
                 src={event.image}
                 alt={event.name}
@@ -159,6 +179,37 @@ const EventSection = ({
           </div>
         ))}
       </div>
+
+      {/* Full Screen Image Overlay */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          onClick={() => setSelectedImage(null)}
+        >
+          {/* Close Button - positioned relative to viewport */}
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center transition-colors hover:bg-[#4C5637] active:bg-[#4C5637] group z-10 cursor-pointer"
+            aria-label="Close image"
+          >
+            <X className="w-5 h-5 text-[#4C5637] transition-colors group-hover:text-white group-active:text-white" />
+          </button>
+
+          {/* Image Container */}
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] w-auto h-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={selectedImage}
+              alt="Full screen view"
+              width={1200}
+              height={1200}
+              className="max-w-[90vw] max-h-[90vh] w-auto h-auto object-contain"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
