@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components";
 import Heading from "@/components/Gallery/Heading";
-import Events from "@/components/Gallery/Events";
+import EventBtns from "@/components/Gallery/EventBtns";
 import EventSlug from "@/components/Gallery/EventSlug";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-about-bg">
       <Navbar />
       <Heading />
-      <Events />
+      <EventBtns />
       <EventSlug />
     </div>
   );

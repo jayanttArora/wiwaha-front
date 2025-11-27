@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const Events = () => {
+const EventBtns = () => {
   const buttons = ["View All", "2025", "2024", "2023", "2022", "2021"];
 
   return (
@@ -23,4 +23,5 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventBtns;
+
