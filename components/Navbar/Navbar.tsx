@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -52,6 +53,7 @@ export default function Navbar() {
         heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
+    // If not on home page, Link will handle navigation automatically
   };
 
   const handleContactClick = () => {
@@ -68,7 +70,7 @@ export default function Navbar() {
       <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Logo - Left */}
         <div className="shrink-0">
-          <a href="/" className="cursor-pointer" onClick={handleLogoClick}>
+          <Link href="/" className="cursor-pointer" onClick={handleLogoClick}>
             <Image
               src={
                 isScrolled
@@ -81,13 +83,13 @@ export default function Navbar() {
               className="h-[80px] w-auto"
               priority
             />
-          </a>
+          </Link>
         </div>
 
         {/* Navigation Links - Center */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={`nav-item font-dm-sans text-base leading-none tracking-normal transition-colors duration-200 ${
@@ -98,7 +100,7 @@ export default function Navbar() {
               data-text={item.name}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 

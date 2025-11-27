@@ -3,11 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
   const isHomePage = pathname === "/";
 
   const handleEmailSubmit = (e: React.FormEvent) => {
@@ -15,16 +17,15 @@ const Footer = () => {
     console.log("Email submitted:", email);
   };
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e: React.MouseEvent) => {
     if (isHomePage) {
+      e.preventDefault();
       const heroSection = document.getElementById("hero");
       if (heroSection) {
         heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    } else {
-      // Navigate to homepage if not already there
-      window.location.href = "/";
     }
+    // If not on home page, Link will handle navigation automatically
   };
 
   return (
@@ -94,14 +95,14 @@ const Footer = () => {
           {/* Second Column - Logo & Social Icons */}
           <div className="flex flex-col gap-6 items-center">
             {/* Logo */}
-            <div onClick={handleLogoClick} className="cursor-pointer">
+            <Link href="/" onClick={handleLogoClick} className="cursor-pointer">
               <Image
                 src="/logos/wiwaha/white-logo.png"
                 alt="WIWAHA Logo"
                 width={150}
                 height={60}
               />
-            </div>
+            </Link>
 
             {/* Description Text */}
             <p className="font-roboto font-medium 1440:text-[18px] text-white text-center whitespace-normal">
