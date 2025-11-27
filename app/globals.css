@@ -117,3 +117,16 @@
 .nav-item:hover {
   text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor !important;
 }
+
+/********************************************/
+/* SCROLLBAR UTILITIES */
+/********************************************/
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
