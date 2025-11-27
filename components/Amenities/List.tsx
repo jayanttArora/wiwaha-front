@@ -3,16 +3,16 @@ import Image from "next/image";
 
 const List = () => {
   return (
-    <section className="container mx-auto w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] flex flex-col gap-10 py-16">
+    <section className="container mx-auto w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] flex flex-col gap-6 py-16">
       {/* Row 1: Pool & Lawn */}
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-6">
         {/* Column 1: Pool (60%) */}
-        <div className="w-[60%] relative h-[280px] rounded-[10px] overflow-hidden">
+        <div className="w-[60%] relative h-[280px] rounded-[10px] overflow-hidden group cursor-pointer">
           <Image
             src="/images/amenities/list/pool.jpg"
             alt="Pool Deck"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100"
           />
           <div
             className="absolute inset-0"
@@ -21,8 +21,8 @@ const List = () => {
                 "linear-gradient(180deg, rgba(107, 109, 112, 0.1) 10%, rgba(1, 1, 1, 0.3) 80%)",
             }}
           />
-          <div className="absolute inset-0 flex flex-row justify-start items-end p-8">
-            <div className="flex flex-col gap-4">
+          <div className="absolute inset-0 flex flex-row justify-start items-end p-8 pb-4">
+            <div className="flex flex-col gap-2 max-w-[80%]">
               <h3 className="font-prata font-normal text-[28px] text-[#FFFFFF] text-left">
                 Pool Deck
               </h3>
@@ -35,12 +35,12 @@ const List = () => {
         </div>
 
         {/* Column 2: Lawn (40%) */}
-        <div className="w-[40%] relative h-[280px] rounded-[10px] overflow-hidden">
+        <div className="w-[40%] relative h-[280px] rounded-[10px] overflow-hidden group cursor-pointer">
           <Image
             src="/images/amenities/list/lawn.jpg"
             alt="Open Lawn"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100"
           />
           <div
             className="absolute inset-0"
@@ -49,8 +49,8 @@ const List = () => {
                 "linear-gradient(180deg, rgba(107, 109, 112, 0.1) 10%, rgba(1, 1, 1, 0.3) 80%)",
             }}
           />
-          <div className="absolute inset-0 flex flex-row justify-start items-end p-8">
-            <div className="flex flex-col gap-4">
+          <div className="absolute inset-0 flex flex-row justify-start items-end p-8 pb-4">
+            <div className="flex flex-col gap-2 max-w-[95%]">
               <h3 className="font-prata font-normal text-[28px] text-[#FFFFFF] text-left">
                 Open Lawn
               </h3>
@@ -64,14 +64,14 @@ const List = () => {
       </div>
 
       {/* Row 2: Catering & Amphitheatre */}
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-6">
         {/* Column 1: Catering (40%) */}
-        <div className="w-[40%] relative h-[280px] rounded-[10px] overflow-hidden">
+        <div className="w-[40%] relative h-[280px] rounded-[10px] overflow-hidden group cursor-pointer">
           <Image
             src="/images/amenities/list/catering.jpg"
             alt="Premium Catering"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100"
           />
           <div
             className="absolute inset-0"
@@ -80,8 +80,8 @@ const List = () => {
                 "linear-gradient(180deg, rgba(107, 109, 112, 0.1) 10%, rgba(1, 1, 1, 0.3) 80%)",
             }}
           />
-          <div className="absolute inset-0 flex flex-row justify-start items-end p-8">
-            <div className="flex flex-col gap-4">
+          <div className="absolute inset-0 flex flex-row justify-start items-end p-8 pb-4">
+            <div className="flex flex-col gap-2 max-w-[95%]">
               <h3 className="font-prata font-normal text-[28px] text-[#FFFFFF] text-left">
                 Premium Catering
               </h3>
@@ -94,12 +94,12 @@ const List = () => {
         </div>
 
         {/* Column 2: Amphitheatre (60%) */}
-        <div className="w-[60%] relative h-[280px] rounded-[10px] overflow-hidden">
+        <div className="w-[60%] relative h-[280px] rounded-[10px] overflow-hidden group cursor-pointer">
           <Image
             src="/images/amenities/list/amphitheatre.jpg"
             alt="Amphitheatre"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100"
           />
           <div
             className="absolute inset-0"
@@ -108,8 +108,8 @@ const List = () => {
                 "linear-gradient(180deg, rgba(107, 109, 112, 0.1) 10%, rgba(1, 1, 1, 0.3) 80%)",
             }}
           />
-          <div className="absolute inset-0 flex flex-row justify-start items-end p-8">
-            <div className="flex flex-col gap-4">
+          <div className="absolute inset-0 flex flex-row justify-start items-end p-8 pb-4">
+            <div className="flex flex-col gap-2 max-w-[80%]">
               <h3 className="font-prata font-normal text-[28px] text-[#FFFFFF] text-left">
                 Amphitheatre
               </h3>
@@ -123,14 +123,14 @@ const List = () => {
       </div>
 
       {/* Row 3: Photo & Accommodation */}
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-6">
         {/* Column 1: Photo (60%) */}
-        <div className="w-[60%] relative h-[280px] rounded-[10px] overflow-hidden">
+        <div className="w-[60%] relative h-[280px] rounded-[10px] overflow-hidden group cursor-pointer">
           <Image
             src="/images/amenities/list/photo.jpg"
             alt="Photo Spots"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100"
           />
           <div
             className="absolute inset-0"
@@ -139,8 +139,8 @@ const List = () => {
                 "linear-gradient(180deg, rgba(107, 109, 112, 0.1) 10%, rgba(1, 1, 1, 0.3) 80%)",
             }}
           />
-          <div className="absolute inset-0 flex flex-row justify-start items-end p-8">
-            <div className="flex flex-col gap-4">
+          <div className="absolute inset-0 flex flex-row justify-start items-end p-8 pb-4">
+            <div className="flex flex-col gap-2 max-w-[80%]">
               <h3 className="font-prata font-normal text-[28px] text-[#FFFFFF] text-left">
                 Photo Spots
               </h3>
@@ -153,12 +153,12 @@ const List = () => {
         </div>
 
         {/* Column 2: Accommodation (40%) */}
-        <div className="w-[40%] relative h-[280px] rounded-[10px] overflow-hidden">
+        <div className="w-[40%] relative h-[280px] rounded-[10px] overflow-hidden group cursor-pointer">
           <Image
             src="/images/amenities/list/accommodation.png"
             alt="Accommodation"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100"
           />
           <div
             className="absolute inset-0"
@@ -167,8 +167,8 @@ const List = () => {
                 "linear-gradient(180deg, rgba(107, 109, 112, 0.1) 10%, rgba(1, 1, 1, 0.3) 80%)",
             }}
           />
-          <div className="absolute inset-0 flex flex-row justify-start items-end p-8">
-            <div className="flex flex-col gap-4">
+          <div className="absolute inset-0 flex flex-row justify-start items-end p-8 pb-4">
+            <div className="flex flex-col gap-2 max-w-[95%]">
               <h3 className="font-prata font-normal text-[28px] text-[#FFFFFF] text-left">
                 Accommodation
               </h3>
