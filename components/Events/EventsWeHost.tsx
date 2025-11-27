@@ -4,14 +4,14 @@ import Image from "next/image";
 const EventsWeHost = () => {
   return (
     <section className="mb-6 bg-[#F3EEEA] mt-(--navbar-height)">
-      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] relative overflow-hidden rounded-[10px] py-20">
+      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] relative overflow-hidden rounded-[10px] py-20 group">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/events/eventsWeHost/bg.png"
             alt="Background"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100 cursor-pointer"
           />
         </div>
 
