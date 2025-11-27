@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const EventSlug = () => {
   const totalEvents = 6;
-  const visibleEvents = 4;
+  const [visibleEvents, setVisibleEvents] = useState(4);
   const [startIndex, setStartIndex] = useState(0);
 
   const [buttonSize, setButtonSize] = useState("60");
@@ -14,12 +14,19 @@ const EventSlug = () => {
     const handleResize = () => {
       if (window.innerWidth < 650) {
         setButtonSize("40");
+        setVisibleEvents(2);
+      } else if (window.innerWidth < 850) {
+        setButtonSize("40");
+        setVisibleEvents(3);
       } else if (window.innerWidth < 1080) {
         setButtonSize("40");
+        setVisibleEvents(4);
       } else if (window.innerWidth < 1440) {
         setButtonSize("50");
+        setVisibleEvents(4);
       } else {
         setButtonSize("60");
+        setVisibleEvents(4);
       }
     };
 
@@ -27,6 +34,14 @@ const EventSlug = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Adjust startIndex when visibleEvents changes
+  useEffect(() => {
+    setStartIndex((prevIndex) => {
+      const maxStartIndex = Math.max(0, totalEvents - visibleEvents);
+      return Math.min(prevIndex, maxStartIndex);
+    });
+  }, [visibleEvents, totalEvents]);
 
   const events = Array.from({ length: totalEvents }, (_, i) => ({
     id: i + 1,
@@ -41,8 +56,9 @@ const EventSlug = () => {
   };
 
   const handleRightClick = () => {
-    if (startIndex < totalEvents - visibleEvents) {
-      setStartIndex(startIndex + 1);
+    const maxStartIndex = totalEvents - visibleEvents;
+    if (startIndex < maxStartIndex) {
+      setStartIndex(Math.min(startIndex + 1, maxStartIndex));
     }
   };
 
@@ -61,7 +77,7 @@ const EventSlug = () => {
           {/* Buttons Row */}
           <div className="flex flex-row justify-between items-center 1440:mb-8 1080:mb-6">
             {/* Heading */}
-            <h2 className="font-prata font-normal text-[40px] text-[#4C5637]">
+            <h2 className="font-prata font-normal 1440:text-[40px] 1080:text-[32px] 650:text-[28px] 480:text-[24px] text-[24px] text-[#4C5637]">
               All Events
             </h2>
 
