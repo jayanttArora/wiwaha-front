@@ -4,7 +4,7 @@ import Image from "next/image";
 const EventsWeHost = () => {
   return (
     <section className="mb-6 bg-[#F3EEEA] pt-[calc(var(--navbar-height)+32px)]">
-      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] relative overflow-hidden rounded-[10px] py-20 group">
+      <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px] relative overflow-hidden rounded-[10px] py-20 group cursor-pointer">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
