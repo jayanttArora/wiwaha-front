@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from "react";
 import EventBtns from "@/components/Gallery/EventBtns";
 import EventSlug from "@/components/Gallery/EventSlug";
+import PlanYourEvent from "@/components/Gallery/PlanYourEvent";
 
 const GalleryContent = () => {
   const [selectedFilter, setSelectedFilter] = useState("View All");
@@ -16,6 +17,7 @@ const GalleryContent = () => {
     <>
       <EventBtns selectedFilter={selectedFilter} onFilterChange={handleFilterChange} />
       <EventSlug selectedFilter={selectedFilter} />
+      <PlanYourEvent />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components";
+import { Navbar, Footer } from "@/components";
 import Heading from "@/components/Gallery/Heading";
 import GalleryContent from "@/components/Gallery/GalleryContent";
 
@@ -14,6 +14,7 @@ export default function GalleryPage() {
       <Navbar />
       <Heading />
       <GalleryContent />
+      <Footer />
     </div>
   );
 }
