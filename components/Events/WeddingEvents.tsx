@@ -6,11 +6,11 @@ const WeddingEvents = () => {
       {/* Intro */}
       <div className="w-full flex flex-col lg:flex-row gap-8 items-center justify-between">
         {/* Column 1: Image */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 overflow-hidden rounded-[10px]">
           <img
             src="/images/events/weddingEvents/intro.jpg"
             alt="Wedding Events Intro"
-            className="w-full h-[340px] object-cover rounded-[10px] opacity-95"
+            className="w-full h-[340px] object-cover opacity-95 transition-transform duration-500 hover:scale-110 cursor-pointer"
           />
         </div>
 
@@ -72,11 +72,11 @@ const WeddingEvents = () => {
           {/* Column 1 */}
           <div className="flex flex-col gap-6">
             {/* Image */}
-            <div className="w-full">
+            <div className="w-full overflow-hidden rounded-[10px]">
               <img
                 src="/images/events/weddingEvents/corporate.jpg"
                 alt="Corporate Events"
-                className="w-full object-cover rounded-[10px]"
+                className="w-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
               />
             </div>
 
@@ -96,11 +96,11 @@ const WeddingEvents = () => {
           {/* Column 2 */}
           <div className="flex flex-col gap-6">
             {/* Image */}
-            <div className="w-full">
+            <div className="w-full overflow-hidden rounded-[10px]">
               <img
                 src="/images/events/weddingEvents/private.jpg"
                 alt="Private Celebrations"
-                className="w-full object-cover rounded-[10px]"
+                className="w-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
               />
             </div>
 
@@ -120,11 +120,11 @@ const WeddingEvents = () => {
           {/* Column 3 */}
           <div className="flex flex-col gap-6">
             {/* Image */}
-            <div className="w-full">
+            <div className="w-full overflow-hidden rounded-[10px]">
               <img
                 src="/images/events/weddingEvents/social.jpg"
                 alt="Social Gatherings"
-                className="w-full object-cover rounded-[10px]"
+                className="w-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
               />
             </div>
 
