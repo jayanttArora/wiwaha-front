@@ -70,12 +70,12 @@ const EventSlug = () => {
   const showRightArrow = startIndex < totalEvents - visibleEvents;
 
   return (
-    <section className="flex flex-col py-8">
+    <section className="flex flex-col 1440:py-8 1080:py-6 650:py-4 480:py-4 py-4">
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
         {/* All Events Section */}
         <div className="flex flex-col">
           {/* Buttons Row */}
-          <div className="flex flex-row justify-between items-center 1440:mb-8 1080:mb-6">
+          <div className="flex flex-row justify-between items-center 1440:mb-8 1080:mb-6 650:mb-5 480:mb-5 mb-4">
             {/* Heading */}
             <h2 className="font-prata font-normal 1440:text-[40px] 1080:text-[32px] 650:text-[28px] 480:text-[24px] text-[24px] text-[#4C5637]">
               All Events
@@ -130,7 +130,7 @@ const EventSlug = () => {
             {visibleEventsList.map((event) => (
               <div key={event.id} className="flex flex-col flex-1">
                 {/* Image Box */}
-                <div className="w-full aspect-square rounded-[10px] overflow-hidden mb-4">
+                <div className="w-full aspect-square rounded-[10px] overflow-hidden 1080:mb-4 mb-3">
                   <Image
                     src={event.image}
                     alt={event.name}
@@ -142,7 +142,7 @@ const EventSlug = () => {
                 </div>
 
                 {/* Event Name */}
-                <h3 className="text-center font-prata font-normal text-[20px] text-[#4C5637]">
+                <h3 className="text-center font-prata font-normal 1080:text-[20px] 650:text-[18px] 480:text-[16px] text-[14px] text-[#4C5637]">
                   {event.name}
                 </h3>
               </div>
