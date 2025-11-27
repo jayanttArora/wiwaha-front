@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const PlanYourEvent = () => {
   return (
-    <section className="py-20 mb-6 bg-[#4C5637] relative overflow-hidden">
+    <section className="py-20 mb-6 bg-[#4C5637] relative overflow-hidden rounded-[10px]">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 rounded-[10px] overflow-hidden">
         <Image
           src="/images/contact/plan/bg.png"
           alt="Background"
