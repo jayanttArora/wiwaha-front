@@ -163,7 +163,13 @@ const EventSection = ({
   );
 };
 
-const EventSlug = () => {
+interface EventSlugProps {
+  selectedFilter: string;
+}
+
+const EventSlug = ({ selectedFilter }: EventSlugProps) => {
+  // For now, show the same content for all filters
+  // Later, this will be replaced with API calls to filter by year
   const eventSections = [
     {
       title: "All Events",

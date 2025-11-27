@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components";
 import Heading from "@/components/Gallery/Heading";
-import EventBtns from "@/components/Gallery/EventBtns";
-import EventSlug from "@/components/Gallery/EventSlug";
+import GalleryContent from "@/components/Gallery/GalleryContent";
 
 export const metadata: Metadata = {
   title: "Wiwaha",
@@ -14,8 +13,7 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-about-bg">
       <Navbar />
       <Heading />
-      <EventBtns />
-      <EventSlug />
+      <GalleryContent />
     </div>
   );
 }
