@@ -2,6 +2,13 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 export default function ContactUs() {
   const [name, setName] = useState("");
@@ -47,7 +54,6 @@ export default function ContactUs() {
   const fieldBaseClasses = `w-full rounded-[10px] bg-white font-roboto text-[${formFontSize}] font-normal text-[#4C5637] placeholder:font-roboto placeholder:text-[${formFontSize}] placeholder:font-normal placeholder:text-[#878787] placeholder:tracking-[1.1px] focus:outline-none`;
   const inputWithIconClasses = `${fieldBaseClasses} 850:py-3 py-2 1440:pl-12 1080:pl-10 850:pl-8 650:pl-6 pl-10 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
   const textareaClasses = `${fieldBaseClasses} resize-none 850:py-3 py-2 1440:pl-4 1080:pl-3 850:pl-2 650:pl-1 pl-4 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
-  const selectClasses = `${fieldBaseClasses} appearance-none 850:py-3 py-2 1440:pl-4 1080:pl-3 850:pl-2 650:pl-1 pl-4 1440:pr-12 1080:pr-10 850:pr-8 650:pr-6 pr-12`;
 
   return (
     <div
@@ -152,40 +158,28 @@ export default function ContactUs() {
                         />
                       </div>
                       <div className="relative w-full 650:w-1/2">
-                        <select
+                        <Select
                           value={eventType}
-                          onChange={(event) => setEventType(event.target.value)}
-                          className={`${selectClasses} ${
-                            eventType ? "text-[#4C5637]" : "text-[#878787]"
-                          }`}
-                          style={{ letterSpacing: "1.1px" }}
-                          required
+                          onValueChange={(value) => setEventType(value)}
                         >
-                          <option value="" disabled>
-                            Event Type
-                          </option>
-                          <option value="wedding">Wedding</option>
-                          <option value="corporate">Corporate</option>
-                          <option value="social">Social Gathering</option>
-                          <option value="other">Other</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <SelectTrigger
+                            className={
+                              eventType ? "text-[#4C5637]" : "text-[#878787]"
+                            }
                           >
-                            <path
-                              d="M5 7.5L10 12.5L15 7.5"
-                              stroke="#878787"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
+                            <SelectValue placeholder="Event Type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="wedding">Wedding</SelectItem>
+                            <SelectItem value="corporate">Corporate</SelectItem>
+                            <SelectItem value="social">
+                              Social Gathering
+                            </SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        {/* Hidden input for form validation */}
+                        <input type="hidden" value={eventType} required />
                       </div>
                     </div>
 
