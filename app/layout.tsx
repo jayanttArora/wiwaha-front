@@ -9,6 +9,7 @@ import {
   Albert_Sans,
 } from "next/font/google";
 import "./globals.css";
+import CustomScrollbar from "@/components/CustomScrollbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,6 +67,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} ${dmSans.variable} ${roboto.variable} ${raleway.variable} ${albertSans.variable} antialiased`}
       >
         {children}
+        <CustomScrollbar />
       </body>
     </html>
   );

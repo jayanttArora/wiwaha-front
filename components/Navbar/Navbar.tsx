@@ -103,7 +103,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-red-400 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-about-bg" : "bg-[#010101]/60"
       }`}
       style={{ height: "var(--navbar-height)" }}
