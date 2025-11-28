@@ -103,7 +103,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-red-400 ${
         isScrolled ? "bg-about-bg" : "bg-[#010101]/60"
       }`}
       style={{ height: "var(--navbar-height)" }}
@@ -121,14 +121,14 @@ export default function Navbar() {
               alt="WIWAHA Logo"
               width={150}
               height={100}
-              className="h-[80px] w-auto"
+              className="1280:h-[75px] 850:h-[70px] 650:h-[65px] h-[56px] w-auto"
               priority
             />
           </Link>
         </div>
 
         {/* Navigation Links - Center */}
-        <div className="hidden max-[850px]:hidden min-[850px]:flex items-center space-x-8">
+        <div className="hidden max-[850px]:hidden 850:flex items-center space-x-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -146,7 +146,7 @@ export default function Navbar() {
         </div>
 
         {/* Contact Us Button - Right (Desktop only) */}
-        <div className="shrink-0 hidden max-[850px]:hidden min-[850px]:block">
+        <div className="shrink-0 hidden max-[850px]:hidden 850:block">
           <button
             onClick={handleContactClick}
             className="w-[160px] h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
@@ -188,7 +188,7 @@ export default function Navbar() {
 
       {/* Full Screen Mobile Menu Sidebar (shows below 850px) */}
       <div
-        className={`max-[850px]:block min-[850px]:hidden fixed inset-0 z-[60] transition-all duration-500 ease-in-out ${
+        className={`max-[850px]:block 850:hidden fixed inset-0 z-60 transition-all duration-500 ease-in-out ${
           isMobileMenuOpen
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-full pointer-events-none"
