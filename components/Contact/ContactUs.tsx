@@ -215,18 +215,19 @@ export default function ContactUs() {
               {/* Grid boxes */}
               <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-4">
                 {/* Box 1 - Location (col 1, row 1) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/location-brown.svg"
                       alt="Location icon"
                       width={24}
                       height={24}
+                      className="1440:w-[24px] 1080:w-[22px] 850:w-[20px] 650:w-[18px] w-[16px]"
                     />
                   </div>
                   <div className="text-left">
                     <h3
-                      className="font-prata text-[20px] font-normal"
+                      className="font-prata 1440:text-[20px] 1080:text-[18px] 850:text-[16px] 650:text-[18px] text-[16px] font-normal"
                       style={{ color: "#4C5637" }}
                     >
                       Location
@@ -234,7 +235,7 @@ export default function ContactUs() {
                   </div>
                   <div className="text-left">
                     <p
-                      className="font-roboto text-[16px] font-normal"
+                      className="font-roboto 1440:text-[16px] 1080:text-[15px] 850:text-[15px] 650:text-[14px] text-[13px] font-normal"
                       style={{ color: "#505050" }}
                     >
                       Springdales farm, survey no. 15, Bettahalsoor post, near,
@@ -244,18 +245,19 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 2 - Phone (col 2, row 1) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/phone.svg"
                       alt="Phone icon"
                       width={24}
                       height={24}
+                      className="1440:w-[24px] 1080:w-[22px] 850:w-[20px] 650:w-[18px] w-[16px]"
                     />
                   </div>
                   <div className="text-left">
                     <h3
-                      className="font-prata text-[20px] font-normal"
+                      className="font-prata 1440:text-[20px] 1080:text-[18px] 850:text-[16px] 650:text-[18px] text-[16px] font-normal"
                       style={{ color: "#4C5637" }}
                     >
                       Phone
@@ -263,7 +265,7 @@ export default function ContactUs() {
                   </div>
                   <div className="text-left">
                     <p
-                      className="font-roboto text-[16px] font-normal"
+                      className="font-roboto 1440:text-[16px] 1080:text-[15px] 850:text-[15px] 650:text-[14px] text-[13px] font-normal"
                       style={{ color: "#505050" }}
                     >
                       +91 9169935666
@@ -272,18 +274,19 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 3 - Email (col 1, row 2) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/email.svg"
                       alt="Email icon"
                       width={24}
                       height={24}
+                      className="1440:w-[24px] 1080:w-[22px] 850:w-[20px] 650:w-[18px] w-[16px]"
                     />
                   </div>
                   <div className="text-left">
                     <h3
-                      className="font-prata text-[20px] font-normal"
+                      className="font-prata 1440:text-[20px] 1080:text-[18px] 850:text-[16px] 650:text-[18px] text-[16px] font-normal"
                       style={{ color: "#4C5637" }}
                     >
                       Email
@@ -291,7 +294,7 @@ export default function ContactUs() {
                   </div>
                   <div className="text-left">
                     <p
-                      className="font-roboto text-[16px] font-normal"
+                      className="font-roboto 1440:text-[16px] 1080:text-[15px] 850:text-[15px] 650:text-[14px] text-[13px] font-normal"
                       style={{ color: "#505050" }}
                     >
                       info@wiwahabypraman.com
@@ -300,18 +303,19 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 4 - Business Hours (col 2, row 2) */}
-                <div className="flex h-full flex-col gap-4 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/business.svg"
                       alt="Business icon"
                       width={24}
                       height={24}
+                      className="1440:w-[24px] 1080:w-[22px] 850:w-[20px] 650:w-[18px] w-[16px]"
                     />
                   </div>
                   <div className="text-left">
                     <h3
-                      className="font-prata text-[20px] font-normal"
+                      className="font-prata 1440:text-[20px] 1080:text-[18px] 850:text-[16px] 650:text-[18px] text-[16px] font-normal"
                       style={{ color: "#4C5637" }}
                     >
                       Business Hours
@@ -319,7 +323,7 @@ export default function ContactUs() {
                   </div>
                   <div className="text-left">
                     <p
-                      className="font-roboto text-[16px] font-normal"
+                      className="font-roboto 1440:text-[16px] 1080:text-[15px] 850:text-[15px] 650:text-[14px] text-[13px] font-normal"
                       style={{ color: "#505050" }}
                     >
                       Monday - Sunday, 9:00 AM - 8:00 PM
