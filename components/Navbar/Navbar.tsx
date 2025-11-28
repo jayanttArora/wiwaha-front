@@ -7,6 +7,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === "/";
@@ -37,6 +38,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -58,6 +76,15 @@ export default function Navbar() {
 
   const handleContactClick = () => {
     router.push("/contact");
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -87,7 +114,7 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Links - Center */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden max-[850px]:hidden min-[850px]:flex items-center space-x-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -104,8 +131,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Contact Us Button - Right */}
-        <div className="shrink-0">
+        {/* Contact Us Button - Right (Desktop only) */}
+        <div className="shrink-0 hidden max-[850px]:hidden min-[850px]:block">
           <button
             onClick={handleContactClick}
             className="w-[160px] h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
@@ -123,12 +150,14 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        {/* Mobile Menu Button (shows below 850px) */}
+        <div className="hidden max-[850px]:block">
           <button
-            className={`p-2 ${
+            onClick={toggleMobileMenu}
+            className={`p-2 transition-colors duration-200 ${
               isScrolled ? "text-[#D6A663]" : "text-[#d9d9d9]"
             }`}
+            aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
@@ -144,6 +173,84 @@ export default function Navbar() {
               />
             </svg>
           </button>
+        </div>
+      </div>
+
+      {/* Full Screen Mobile Menu Sidebar (shows below 850px) */}
+      <div
+        className={`max-[850px]:block min-[850px]:hidden fixed inset-0 z-[60] transition-all duration-500 ease-in-out ${
+          isMobileMenuOpen
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-full pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          onClick={toggleMobileMenu}
+        />
+
+        {/* Sidebar Content */}
+        <div className="absolute inset-0 bg-about-bg flex flex-col">
+          {/* Close Button - Top Right */}
+          <div className="absolute top-4 right-4 z-10">
+            <button
+              onClick={toggleMobileMenu}
+              className="p-3 text-[#D6A663] hover:text-[#4C5637] transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Centered Content */}
+          <div className="flex-1 flex flex-col items-center justify-center px-4 py-8">
+            <div className="flex flex-col items-center space-y-6 w-full max-w-md">
+              {/* Navigation Links */}
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={handleNavLinkClick}
+                  className="nav-item font-dm-sans text-xl leading-none tracking-normal transition-colors duration-200 text-[#D6A663] hover:text-[#4C5637] py-3 text-center w-full"
+                  data-text={item.name}
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              {/* Contact Us Button - Below all links */}
+              <div className="pt-4 w-full">
+                <button
+                  onClick={handleContactClick}
+                  className="w-full h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
+                >
+                  <Image
+                    src="/icons/contact-us.svg"
+                    alt="Contact Us"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  <span className="font-dm-sans font-semibold text-base leading-none tracking-normal text-white">
+                    Contact Us
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
