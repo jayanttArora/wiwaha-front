@@ -52,7 +52,7 @@ export default function ContactUs() {
   };
 
   const fieldBaseClasses = `w-full rounded-[10px] bg-white font-roboto text-[${formFontSize}] font-normal text-[#4C5637] placeholder:font-roboto placeholder:text-[${formFontSize}] placeholder:font-normal placeholder:text-[#878787] placeholder:tracking-[1.1px] focus:outline-none`;
-  const inputWithIconClasses = `${fieldBaseClasses} 850:py-3 py-2 1440:pl-12 1080:pl-10 850:pl-8 650:pl-6 pl-10 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
+  const inputWithIconClasses = `${fieldBaseClasses} 850:py-3 py-2 1440:pl-12 1080:pl-10 850:pl-10 650:pl-9 pl-9 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
   const textareaClasses = `${fieldBaseClasses} resize-none 850:py-3 py-2 1440:pl-4 1080:pl-3 850:pl-2 650:pl-1 pl-4 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
 
   return (
@@ -62,9 +62,9 @@ export default function ContactUs() {
     >
       {/* Flex-row container with 2 columns */}
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
-        <div className="flex w-full flex-col gap-10 850:flex-row 850:items-stretch">
+        <div className="flex w-full flex-col gap-10 1080:flex-row 1080:items-stretch">
           {/* 1st column - 40% width */}
-          <div className="flex w-full flex-col 850:w-[40%]">
+          <div className="flex w-full flex-col 1080:w-[40%]">
             {/* Flex-column container with 3 rows */}
             <div className="flex flex-1 flex-col 1440:gap-8 1080:gap-6 850:gap-4 650:gap-3 gap-2">
               {/* 1st row - Heading */}
@@ -209,7 +209,7 @@ export default function ContactUs() {
           </div>
 
           {/* 2nd column - 60% width */}
-          <div className="flex w-full flex-col 850:w-[60%]">
+          <div className="flex w-full flex-col 1080:w-[60%]">
             {/* Flex-column container with 2 rows */}
             <div className="flex flex-1 flex-col gap-10">
               {/* Grid boxes */}
