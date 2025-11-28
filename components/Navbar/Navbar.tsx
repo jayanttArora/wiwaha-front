@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import Image from "next/image";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const hamburgerInputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === "/";
@@ -55,6 +56,13 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Sync checkbox with state
+  useEffect(() => {
+    if (hamburgerInputRef.current) {
+      hamburgerInputRef.current.checked = isMobileMenuOpen;
+    }
+  }, [isMobileMenuOpen]);
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -81,6 +89,12 @@ export default function Navbar() {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleCheckboxChange = () => {
+    if (hamburgerInputRef.current) {
+      setIsMobileMenuOpen(hamburgerInputRef.current.checked);
+    }
   };
 
   const handleNavLinkClick = () => {
@@ -150,29 +164,25 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button (shows below 850px) */}
+        {/* Animated Hamburger Menu Button (shows below 850px) */}
         <div className="hidden max-[850px]:block">
-          <button
-            onClick={toggleMobileMenu}
-            className={`p-2 transition-colors duration-200 ${
-              isScrolled ? "text-[#D6A663]" : "text-[#d9d9d9]"
-            }`}
-            aria-label="Toggle menu"
+          <label
+            className="hamburger-menu-nav"
+            style={
+              {
+                "--hamburger-foreground": isScrolled ? "#D6A663" : "#d9d9d9",
+              } as React.CSSProperties
+            }
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+            <input
+              id="sidebar_hamburger_icon"
+              type="checkbox"
+              ref={hamburgerInputRef}
+              onChange={handleCheckboxChange}
+              checked={isMobileMenuOpen}
+              aria-label="Toggle menu"
+            />
+          </label>
         </div>
       </div>
 
@@ -192,29 +202,6 @@ export default function Navbar() {
 
         {/* Sidebar Content */}
         <div className="absolute inset-0 bg-about-bg flex flex-col">
-          {/* Close Button - Top Right */}
-          <div className="absolute top-4 right-4 z-10">
-            <button
-              onClick={toggleMobileMenu}
-              className="p-3 text-[#D6A663] hover:text-[#4C5637] transition-colors duration-200"
-              aria-label="Close menu"
-            >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
           {/* Centered Content */}
           <div className="flex-1 flex flex-col items-center justify-center px-4 py-8">
             <div className="flex flex-col items-center space-y-6 w-full max-w-md">

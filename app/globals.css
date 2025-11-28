@@ -130,3 +130,96 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+/********************************************/
+/* HAMBURGER MENU ANIMATION */
+/********************************************/
+
+:root {
+  --hamburger-bar-width: 32px;
+  --hamburger-bar-height: 3px;
+  --hamburger-gap: 6px;
+  --hamburger-foreground: #D6A663;
+  --hamburger-animation-timing: 300ms ease-in-out;
+  --hamburger-height: calc(var(--hamburger-bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu-nav {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  
+  width: max-content;
+  cursor: pointer;
+  position: relative;
+  z-index: 9999;
+  
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+}
+
+.hamburger-menu-nav::before,
+.hamburger-menu-nav::after,
+.hamburger-menu-nav input {
+  content: "";
+  width: var(--hamburger-bar-width);
+  height: var(--hamburger-bar-height);
+  background-color: var(--hamburger-foreground);
+  border-radius: 9999px;
+  transition: opacity var(--hamburger-animation-timing),
+              width var(--hamburger-animation-timing),
+              rotate var(--hamburger-animation-timing),
+              translate var(--hamburger-animation-timing),
+              background-color var(--hamburger-animation-timing);
+  transform-origin: right center;
+}
+
+.hamburger-menu-nav input {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  pointer-events: none;
+  display: block;
+}
+
+/* When checked - transform to X */
+.hamburger-menu-nav:has(input:checked)::before {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--hamburger-bar-height) / -2);
+}
+
+.hamburger-menu-nav:has(input:checked)::after {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--hamburger-bar-height) / 2);
+}
+
+.hamburger-menu-nav input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+/* Focus styles for accessibility */
+.hamburger-menu-nav:has(input:focus-visible)::before,
+.hamburger-menu-nav:has(input:focus-visible)::after,
+.hamburger-menu-nav input:focus-visible {
+  outline: 2px solid var(--hamburger-foreground);
+  outline-offset: 4px;
+}
+
+/* Responsive sizing */
+@media (max-width: 650px) {
+  :root {
+    --hamburger-bar-width: 28px;
+    --hamburger-bar-height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --hamburger-bar-width: 24px;
+    --hamburger-bar-height: 2.5px;
+    --hamburger-gap: 5px;
+  }
+}
