@@ -236,6 +236,8 @@ html::-webkit-scrollbar {
     translate var(--hamburger-animation-timing),
     background-color var(--hamburger-animation-timing);
   transform-origin: right center;
+  box-sizing: border-box;
+  border: none;
 }
 
 .hamburger-menu-nav input {
@@ -245,6 +247,8 @@ html::-webkit-scrollbar {
   outline: none;
   pointer-events: none;
   display: block;
+  box-sizing: border-box;
+  border: none;
 }
 
 /* When checked - transform to X */
