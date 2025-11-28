@@ -62,7 +62,7 @@ export default function ContactUs() {
     >
       {/* Flex-row container with 2 columns */}
       <div className="container mx-auto px-4 w-full 480:max-w-[700px] 650:max-w-[900px] 1080:max-w-[1200px] 1440:max-w-[1400px]">
-        <div className="flex w-full flex-col gap-10 1080:flex-row 1080:items-stretch">
+        <div className="flex w-full flex-col 1080:gap-10 gap-8 1080:flex-row 1080:items-stretch">
           {/* 1st column - 40% width */}
           <div className="flex w-full flex-col 1080:w-[40%]">
             {/* Flex-column container with 3 rows */}
@@ -211,9 +211,9 @@ export default function ContactUs() {
           {/* 2nd column - 60% width */}
           <div className="flex w-full flex-col 1080:w-[60%]">
             {/* Flex-column container with 2 rows */}
-            <div className="flex flex-1 flex-col gap-10">
+            <div className="flex flex-1 flex-col 1080:gap-10 gap-8">
               {/* Grid boxes */}
-              <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-4">
+              <div className="grid min-h-0 flex-1 grid-cols-1 650:grid-cols-2 650:grid-rows-2 gap-4">
                 {/* Box 1 - Location (col 1, row 1) */}
                 <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="text-left">
@@ -339,7 +339,7 @@ export default function ContactUs() {
                   alt="Contact us"
                   width={800}
                   height={600}
-                  className="aspect-[2.7/1] w-full rounded-[10px] object-cover transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
+                  className="650:aspect-[2.7/1] aspect-[2.5/1] w-full rounded-[10px] object-cover transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
                   style={{ opacity: "90%", objectPosition: "center 95%" }}
                 />
               </div>
