@@ -8,12 +8,15 @@ const EventsWeHost = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/events/eventsWeHost/bg.png"
+            src="/images/events/eventsWeHost/bg.jpg"
             alt="Background"
             fill
             className="object-cover transition-transform duration-500 scale-110 group-hover:scale-100 cursor-pointer"
           />
         </div>
+
+        {/* Background Overlay */}
+        <div className="absolute inset-0 z-1 bg-[#00000099]"></div>
 
         <div className="relative z-10">
           {/* Main Heading */}
