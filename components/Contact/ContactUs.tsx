@@ -46,8 +46,8 @@ export default function ContactUs() {
 
   const fieldBaseClasses = `w-full rounded-[10px] bg-white font-roboto text-[${formFontSize}] font-normal text-[#4C5637] placeholder:font-roboto placeholder:text-[${formFontSize}] placeholder:font-normal placeholder:text-[#878787] placeholder:tracking-[1.1px] focus:outline-none`;
   const inputWithIconClasses = `${fieldBaseClasses} 850:py-3 py-2 1440:pl-12 1080:pl-10 850:pl-8 650:pl-6 pl-10 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
-  const textareaClasses = `${fieldBaseClasses} resize-none p-4`;
-  const selectClasses = `${fieldBaseClasses} appearance-none py-3 pr-12 pl-4`;
+  const textareaClasses = `${fieldBaseClasses} resize-none 850:py-3 py-2 1440:pl-4 1080:pl-3 850:pl-2 650:pl-1 pl-4 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
+  const selectClasses = `${fieldBaseClasses} appearance-none 850:py-3 py-2 1440:pl-4 1080:pl-3 850:pl-2 650:pl-1 pl-4 1440:pr-12 1080:pr-10 850:pr-8 650:pr-6 pr-12`;
 
   return (
     <div
