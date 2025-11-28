@@ -199,7 +199,7 @@ export default function ContactUs() {
                   {/* Submit button */}
                   <button
                     type="submit"
-                    className="w-full rounded-[100px] bg-[#D2C094] py-4 text-center font-roboto text-[16px] font-semibold tracking-[1px] text-white cursor-pointer hover:bg-[#C5B388] active:bg-[#B8A67C] transition-colors duration-200"
+                    className="w-full rounded-[100px] bg-[#D2C094] 1080:py-4 650:py-3 py-3 text-center font-roboto 650:text-[16px] text-[15px] font-semibold tracking-[1px] text-white cursor-pointer hover:bg-[#C5B388] active:bg-[#B8A67C] transition-colors duration-200"
                   >
                     Send Message
                   </button>
