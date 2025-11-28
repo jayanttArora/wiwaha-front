@@ -215,7 +215,7 @@ export default function ContactUs() {
               {/* Grid boxes */}
               <div className="grid min-h-0 flex-1 grid-cols-1 650:grid-cols-2 650:grid-rows-2 gap-4">
                 {/* Box 1 - Location (col 1, row 1) */}
-                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 active:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/location-brown.svg"
@@ -245,7 +245,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 2 - Phone (col 2, row 1) */}
-                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 active:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/phone.svg"
@@ -274,7 +274,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 3 - Email (col 1, row 2) */}
-                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 active:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/email.svg"
@@ -303,7 +303,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Box 4 - Business Hours (col 2, row 2) */}
-                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <div className="flex h-full flex-col 1080:gap-4 850:gap-3 650:gap-2 gap-2 rounded-[10px] bg-white p-4 transition-transform duration-300 hover:-translate-y-2 active:-translate-y-2 cursor-pointer">
                   <div className="text-left">
                     <Image
                       src="/icons/business.svg"
@@ -339,7 +339,7 @@ export default function ContactUs() {
                   alt="Contact us"
                   width={800}
                   height={600}
-                  className="650:aspect-[2.7/1] aspect-[2.5/1] w-full rounded-[10px] object-cover transition-transform duration-500 scale-110 hover:scale-100 cursor-pointer"
+                  className="650:aspect-[2.7/1] aspect-[2.5/1] w-full rounded-[10px] object-cover transition-transform duration-500 scale-110 hover:scale-100 active:scale-100 cursor-pointer"
                   style={{ opacity: "90%", objectPosition: "center 95%" }}
                 />
               </div>
