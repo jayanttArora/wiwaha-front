@@ -108,7 +108,7 @@ export default function Navbar() {
       }`}
       style={{ height: "var(--navbar-height)" }}
     >
-      <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div className="h-full max-w-7xl mx-auto 1440:px-4 1080:px-4 850:px-4 650:px-3 px-3 flex items-center justify-between">
         {/* Logo - Left */}
         <div className="shrink-0">
           <Link href="/" className="cursor-pointer" onClick={handleLogoClick}>
@@ -128,12 +128,12 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Links - Center */}
-        <div className="hidden max-[850px]:hidden 850:flex items-center space-x-8">
+        <div className="hidden max-[850px]:hidden 850:flex items-center 1440:space-x-8 1080:space-x-7 850:space-x-6">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`nav-item font-dm-sans text-base leading-none tracking-normal transition-colors duration-200 ${
+              className={`nav-item font-dm-sans 1440:text-[16px] 1080:text-[15px] 850:text-[15px] leading-none tracking-normal transition-colors duration-200 ${
                 isScrolled
                   ? "text-[#D6A663] hover:text-[#4C5637]"
                   : "text-[#D9D9D9] hover:text-white"
@@ -149,16 +149,16 @@ export default function Navbar() {
         <div className="shrink-0 hidden max-[850px]:hidden 850:block">
           <button
             onClick={handleContactClick}
-            className="w-[160px] h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
+            className="1440:w-[160px] 1080:w-[150px] 850:w-[140px] 1440:h-[60px] 1080:h-[56px] 850:h-[52px] bg-[#D2C094] rounded-[100px] flex items-center justify-center 1440:gap-2 1080:gap-2 850:gap-1.5 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer 1440:px-4 1080:px-3 850:px-3"
           >
             <Image
               src="/icons/contact-us.svg"
               alt="Contact Us"
               width={20}
               height={20}
-              className="w-5 h-5"
+              className="1440:w-5 1080:w-[18px] 850:w-4 1440:h-5 1080:h-[18px] 850:h-4"
             />
-            <span className="font-dm-sans font-semibold text-base leading-none tracking-normal text-white">
+            <span className="font-dm-sans font-semibold 1440:text-[16px] 1080:text-[15px] 850:text-[14px] leading-none tracking-normal text-white">
               Contact Us
             </span>
           </button>
@@ -203,15 +203,15 @@ export default function Navbar() {
         {/* Sidebar Content */}
         <div className="absolute inset-0 bg-about-bg flex flex-col">
           {/* Centered Content */}
-          <div className="flex-1 flex flex-col items-center justify-center px-4 py-8">
-            <div className="flex flex-col items-center space-y-6 w-full max-w-md">
+          <div className="flex-1 flex flex-col items-center justify-center 1440:px-4 1080:px-4 850:px-4 650:px-3 px-3 1440:py-8 1080:py-8 850:py-6 650:py-5 py-4">
+            <div className="flex flex-col items-center 1440:space-y-6 1080:space-y-5 850:space-y-4 650:space-y-3 space-y-3 w-full max-w-md">
               {/* Navigation Links */}
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={handleNavLinkClick}
-                  className="nav-item font-dm-sans text-xl leading-none tracking-normal transition-colors duration-200 text-[#D6A663] hover:text-[#4C5637] py-3 text-center w-full"
+                  className="nav-item font-dm-sans 1440:text-[20px] 1080:text-[19px] 850:text-[18px] 650:text-[17px] text-[16px] leading-none tracking-normal transition-colors duration-200 text-[#D6A663] hover:text-[#4C5637] 1440:py-3 1080:py-2.5 850:py-2.5 650:py-2 py-2 text-center w-full"
                   data-text={item.name}
                 >
                   {item.name}
@@ -219,19 +219,19 @@ export default function Navbar() {
               ))}
 
               {/* Contact Us Button - Below all links */}
-              <div className="pt-4 w-full">
+              <div className="1440:pt-4 1080:pt-3 850:pt-3 650:pt-2 pt-2 w-full">
                 <button
                   onClick={handleContactClick}
-                  className="w-full h-[60px] bg-[#D2C094] rounded-[100px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
+                  className="mx-auto 850:w-full 650:w-[175px] w-[145px] 1440:h-[60px] 1080:h-[56px] 850:h-[52px] 650:h-[42px] h-[40px] bg-[#D2C094] rounded-[100px] flex items-center justify-center 1440:gap-2 1080:gap-2 850:gap-1.5 650:gap-1.5 gap-1.5 transition-all duration-200 hover:bg-[#C5B388] cursor-pointer"
                 >
                   <Image
                     src="/icons/contact-us.svg"
                     alt="Contact Us"
                     width={20}
                     height={20}
-                    className="w-5 h-5"
+                    className="1440:w-5 1080:w-[18px] 850:w-4 650:w-[16px] w-[14px] 1440:h-5 1080:h-[18px] 850:h-4 650:h-[17px] h-[14px]"
                   />
-                  <span className="font-dm-sans font-semibold text-base leading-none tracking-normal text-white">
+                  <span className="font-dm-sans font-semibold 1440:text-[16px] 1080:text-[16px] 850:text-[15px] 650:text-[15px] text-[14px] leading-none tracking-normal text-white">
                     Contact Us
                   </span>
                 </button>
