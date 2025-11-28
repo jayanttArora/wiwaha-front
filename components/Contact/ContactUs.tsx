@@ -57,7 +57,7 @@ export default function ContactUs() {
 
   return (
     <div
-      className="w-full pb-20"
+      className="w-full 1440:pb-20 1080:pb-18 850:pb-16 650:pb-14 pb-14"
       style={{ paddingTop: "calc(var(--navbar-height) + 48px)" }}
     >
       {/* Flex-row container with 2 columns */}
