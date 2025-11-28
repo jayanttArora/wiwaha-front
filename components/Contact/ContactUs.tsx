@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ContactUs() {
   const [name, setName] = useState("");
@@ -9,6 +9,28 @@ export default function ContactUs() {
   const [phone, setPhone] = useState("");
   const [eventType, setEventType] = useState("");
   const [message, setMessage] = useState("");
+
+  const [formFontSize, setFormFontSize] = useState("16px");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 650) {
+        setFormFontSize("14px");
+      } else if (window.innerWidth < 850) {
+        setFormFontSize("14px");
+      } else if (window.innerWidth < 1080) {
+        setFormFontSize("14px");
+      } else if (window.innerWidth < 1440) {
+        setFormFontSize("16px");
+      } else {
+        setFormFontSize("16px");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,9 +44,8 @@ export default function ContactUs() {
     console.log("Form Data:", formData);
   };
 
-  const fieldBaseClasses =
-    "w-full rounded-[10px] bg-white font-roboto text-[16px] font-normal text-[#4C5637] placeholder:font-roboto placeholder:text-[16px] placeholder:font-normal placeholder:text-[#878787] placeholder:tracking-[1.1px] focus:outline-none";
-  const inputWithIconClasses = `${fieldBaseClasses} py-3 pl-12 pr-4`;
+  const fieldBaseClasses = `w-full rounded-[10px] bg-white font-roboto text-[${formFontSize}] font-normal text-[#4C5637] placeholder:font-roboto placeholder:text-[${formFontSize}] placeholder:font-normal placeholder:text-[#878787] placeholder:tracking-[1.1px] focus:outline-none`;
+  const inputWithIconClasses = `${fieldBaseClasses} 850:py-3 py-2 1440:pl-12 1080:pl-10 850:pl-8 650:pl-6 pl-10 1440:pr-4 1080:pr-3 850:pr-2 650:pr-1 pr-4`;
   const textareaClasses = `${fieldBaseClasses} resize-none p-4`;
   const selectClasses = `${fieldBaseClasses} appearance-none py-3 pr-12 pl-4`;
 
@@ -39,11 +60,11 @@ export default function ContactUs() {
           {/* 1st column - 40% width */}
           <div className="flex w-full flex-col 850:w-[40%]">
             {/* Flex-column container with 3 rows */}
-            <div className="flex flex-1 flex-col gap-8">
+            <div className="flex flex-1 flex-col 1440:gap-8 1080:gap-6 850:gap-4 650:gap-3 gap-2">
               {/* 1st row - Heading */}
               <div className="text-left">
                 <h1
-                  className="font-prata font-normal text-[64px]"
+                  className="font-prata font-normal 1440:text-[64px] 1080:text-[56px] 850:text-[48px] 650:text-[40px] text-[32px]"
                   style={{ color: "#4C5637" }}
                 >
                   Contact Us
@@ -52,10 +73,7 @@ export default function ContactUs() {
 
               {/* 2nd row - Text */}
               <div className="text-left">
-                <p
-                  className="font-roboto font-normal text-[20px]"
-                  style={{ letterSpacing: "1.2px", color: "#9D7336" }}
-                >
+                <p className="font-roboto font-normal 1440:text-[20px] 1080:text-[18px] 850:text-[16px] 650:text-[14px] text-[13px] text-[#9D7336] tracking-[1.2px]">
                   We'd love to hear from you. Get in touch to discuss your event
                   and discover how we can make it extraordinary
                 </p>
@@ -63,16 +81,13 @@ export default function ContactUs() {
 
               {/* 3rd row - Contact form */}
               <form
-                className="flex flex-1 flex-col rounded-[10px] bg-[#EDE3D9] p-6"
+                className="flex flex-1 flex-col rounded-[10px] bg-[#EDE3D9] 1440:p-6 1080:p-5 850:p-4 650:p-3 p-4"
                 onSubmit={handleSubmit}
               >
                 <div className="flex flex-1 flex-col gap-6">
                   {/* Contact form heading */}
                   <div className="text-left">
-                    <h2
-                      className="font-prata text-[28px] font-normal"
-                      style={{ color: "#4C5637" }}
-                    >
+                    <h2 className="font-prata 1440:text-[28px] 1080:text-[24px] 850:text-[20px] 650:text-[18px] text-[18px] text-[#4C5637] font-normal">
                       Get in Touch with Us
                     </h2>
                   </div>
@@ -87,7 +102,7 @@ export default function ContactUs() {
                           alt="User icon"
                           width={20}
                           height={20}
-                          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
+                          className="1440:w-[20px] 1080:w-[18px] 850:w-[16px] 650:w-[14px] w-[12px] pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
                         />
                         <input
                           type="text"
@@ -104,7 +119,7 @@ export default function ContactUs() {
                           alt="Email icon"
                           width={20}
                           height={20}
-                          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
+                          className="1440:w-[20px] 1080:w-[18px] 850:w-[16px] 650:w-[14px] w-[12px] pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
                         />
                         <input
                           type="email"
@@ -125,7 +140,7 @@ export default function ContactUs() {
                           alt="Phone icon"
                           width={20}
                           height={20}
-                          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
+                          className="1440:w-[20px] 1080:w-[18px] 850:w-[16px] 650:w-[14px] w-[12px] pointer-events-none absolute left-4 top-1/2 -translate-y-1/2"
                         />
                         <input
                           type="tel"
